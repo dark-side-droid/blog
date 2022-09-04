@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Hello World</title>
+
+    <style>
+        * {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+             
+        }
+        .gray-color{
+            background-color: rgba(23, 30, 44, 0.05);
+            color:rgb(0, 0, 0) !important;
+        }
+        .gray-color-no-bg{
+            color:rgb(0,0,0,.75) !important;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+
+        .no-border {
+            border: none !important;
+        }
+
+        .animate-jump {
+            transition: .2s ease-in;
+             
+        }
+
+        .animate-jump:hover {
+            transform: translateY(-10px);
+            cursor: pointer;
+        }
+
+        .animate-scale {
+            transition: .1s linear;
+
+        }
+
+        .animate-scale:hover {
+            transform: scale(1.005);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.12);
+        }
+        img{
+            border:none !important;
+        }
+        .bmc-btn-text{
+            font-family:cursive;
+        }
+
+        .daring{
+            position: fixed;           
+            top:15em;
+            left:1%;
+            max-width: 15%;
+            border-left: 5px solid rgba(0,0,0,.1);
+            margin: 0;
+            padding:0;
+            padding-right:20px;
+            font-size: .9em;
+            color:darkblue;
+            
+        }
+        .daring li{
+            margin-left:5px;
+            margin-top:5px;
+        }
+        .daring li a{
+            text-decoration: none;
+            color:black;
+            
+        }
+        .daring li a:hover{
+            opacity: .75;
+            
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    
+    <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <span class="fs-4"><span class="fw-bold">Andrew&#39;s</span> Technical Blog</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/" class="nav-link text-dark" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/posts" class="nav-link text-dark">Posts</a></li>
+            <li class="nav-item"><a href="/tags" class="nav-link text-dark">Tags</a></li>
+        </ul>
+    </header>
+    
+
+    
+<div class="daring">
+    <nav id="TableOfContents"></nav>
+</div>
+<div class="position-fixed top-50 end-0 d-flex flex-column me-2">
+    <a title="Share on Twitter" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+        data-show-count="false"><span class="bi bi-twitter text-dark fs-3"></span></a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a title="Share on Telegram"
+        href="https://t.me/share/url?url=%2fposts%2fhello-world%2f&text=Summary : An%20introductory%20message%20from%20Andrew"><span
+            class="fs-3 text-dark bi bi-telegram"></span></a>
+</div>
+
+
+<div class="container shadow px-4 py-2 mt-5 rounded">
+    <div class="border-bottom">
+        <h1 class="" id="#">Hello World</h1>
+        
+            <p class="text-muted">Published on September 2, 2022<br><span class="bi bi-file-text"> 233 words </span><span class="bi bi-clock"> 2 min read</span></p>
+            <p class="text-muted mt-3 position-relative bottom-0 start-0">
+                
+                <span class="bi bi-tag fs-5 gray-color-no-bg "></span>
+                
+                
+                
+                
+                <a href="/tags/personal/" class="text-decoration-none"><span
+                        class="gray-color px-2 py-1 rounded">Personal</span>
+                </a>
+                
+                
+                <a href="/tags/intro/" class="text-decoration-none"><span
+                        class="gray-color px-2 py-1 rounded">Intro</span>
+                </a>
+                
+            </p>       
+    </div>
+    <img src="" alt="" class="my-3 px-4 py-1"
+        style="border:none;background-image:url(/hello3.jpg);background-size:cover ;background-position: center; height:400px; border-radius:5px; width: 100%;">
+    <i class="text-muted">Image by NASA</i>
+    <div class="fs-5 my-3">
+        <p>Hey there,</p>
+<p>My name is Andrew and this is my first post on this blog. As we probably don&rsquo;t know each other I’d like to take a moment to introduce myself. I am a digital artist and programmer with an interest in sharing my experience, personal study notes, tips and tricks with anyone interested.</p>
+<p>The areas and interests i will be covering here are 2D and 3D art, visual effects, programming and game development, so you can expect to find content involved with these fields here. Sometimes i will also report on industry or software news and may write opinion or experience pieces if i think they might prove helpful or enlightening in any way.</p>
+<p>Creating a technical blog is an idea that has been on my mind for a while now and finally decided to act on it as i came across a very cool piece of free and open source software called Hugo. After giving it a try, it all kind of stuck together nicely and so here we are.</p>
+<p>If you happen to like the content of this site you can remain up to date on its Telegram channel where i will post any updates. If you have any questions, any ideas for content you would like me to touch upon or any work inquiries feel free to get in touch.</p>
+<p>Thank you for visiting, see ya soon 👋</p>
+<p>Andrew</p>
+
+    </div>
+    <div class="">
+        
+        <p>---</p>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="QNRPF64LXPZTU" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
+                name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_GR/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+        <p class="text-muted mt-2">If you find content like this useful you may donate a small amount to help us support
+            this website and cover the costs.</p>
+        
+
+    </div>
+</div>
+
+
+
+
+
+    
+         <footer class="py-3 mt-5 container border-top">
+    <p class="text-center pt-4"> &copy; 2022 Andrew V | All rights reserved</p>
+</footer>
+    
+</body>
+
+</html>
