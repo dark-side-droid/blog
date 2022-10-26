@@ -48,3 +48,9 @@
     }
 
 
+    .hoverMe > a {
+            display:none;
+    }
+    .hoverMe:hover > a{
+        display: inline-block;
+    }
