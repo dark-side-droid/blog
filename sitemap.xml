@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.andrew-v.com/tags/aces/</loc>
+    <lastmod>2022-10-14T13:58:16+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.andrew-v.com/</loc>
-    <lastmod>2022-10-12T18:31:38+03:00</lastmod>
+    <lastmod>2022-10-14T13:58:16+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.andrew-v.com/posts/</loc>
+    <lastmod>2022-10-14T13:58:16+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.andrew-v.com/posts/aces/aces-blender/</loc>
+    <lastmod>2022-10-14T13:58:16+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.andrew-v.com/tags/</loc>
+    <lastmod>2022-10-14T13:58:16+03:00</lastmod>
   </url>
   
   <url>
@@ -13,17 +33,7 @@
   </url>
   
   <url>
-    <loc>https://blog.andrew-v.com/posts/</loc>
-    <lastmod>2022-10-12T18:31:38+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.andrew-v.com/tags/software/</loc>
-    <lastmod>2022-10-12T18:31:38+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.andrew-v.com/tags/</loc>
     <lastmod>2022-10-12T18:31:38+03:00</lastmod>
   </url>
   

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Setup CG Applications for ACES in Linux" />
+<meta property="og:description" content="How to setup Blender, Houdini, Natron and Clarisse in Linux for working and rendering in the ACES colorspace" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.andrew-v.com/posts/aces/aces-blender/" />
+<meta property="og:image" content="https://blog.andrew-v.com/posts/aces/aces.png" />
+<meta property="article:published_time" content="2022-10-14T13:58:16+03:00" />
+<meta property="article:modified_time" content="2022-10-14T13:58:16+03:00" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.andrew-v.com/posts/aces/aces.png"/>
+
+<meta name="twitter:title" content="Setup CG Applications for ACES in Linux"/>
+<meta name="twitter:description" content="How to setup Blender, Houdini, Natron and Clarisse in Linux for working and rendering in the ACES colorspace"/>
+
+    
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <title>Setup CG Applications for ACES in Linux</title>
+</head>
+
+<body class="bg-light container">
+    
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <span class="fs-4"><span class="fw-bold">Andrew&#39;s</span> Blog</span>
+    </a>
+
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link text-dark" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/posts" class="nav-link text-dark">Posts</a></li>
+        <li class="nav-item"><a href="/tags" class="nav-link text-dark">Tags</a></li>
+    </ul>
+</header>
+    
+
+    
+
+
+<div class="py-2 mt-4 ">
+    <div class="">
+        <h1 class="display-5" id="#">Setup CG Applications for ACES in Linux</h1>
+        <h4 class="text-muted">How to setup Blender, Houdini, Natron and Clarisse in Linux for working and rendering in the ACES colorspace</h4>
+        
+            <p class="text-muted">Published on October 14, 2022<br><span class="bi bi-file-text"> 932 words </span><span class="bi bi-clock"> 5 min read</span></p>
+            <div class="text-muted mt-3 position-relative bottom-0 start-0">
+                
+                <span class="bi bi-tag fs-5 gray-color-no-bg "></span>
+                
+                
+                
+                
+                <a href="https://blog.andrew-v.com/tags/aces/" class="text-decoration-none"><span
+                        class="gray-color px-2 py-1 rounded">ACES</span>
+                </a>
+                
+            </div>       
+    </div>
+    <div class="shadow my-3 px-4 py-1"
+        style="border:none;background-image:url(/posts/aces/aces.png);background-size:cover ;background-position: center; height:400px; border-radius:5px; width: 100%;"></div>
+    <i class="text-muted">Image by acescentral</i>
+    <div class="">
+    
+    <h4 class="mt-4">Contents</h4>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#downloading-the-configuration-files">Downloading the configuration files</a></li>
+    <li><a href="#create-an-environment-variable-for-aces">Create an Environment Variable for ACES</a></li>
+    <li><a href="#blender">Blender</a></li>
+    <li><a href="#natron">Natron</a></li>
+    <li><a href="#houdini">Houdini</a></li>
+    <li><a href="#clarisse">Clarisse</a></li>
+    <li><a href="#done">Done</a></li>
+  </ol>
+</nav>
+    </div>
+    
+    <div class="fs-5 my-3">
+        
+
+<h1 id="introduction" class="hoverMe">
+    Introduction 
+    <a href="#introduction" class="text-decoration-none"> # </a>
+</h1>
+<p>The Academy Color Encoding System or ACES is the latest standard in managing color workflows for digital imagery. In simple terms it is a series of transforms between chosen colorspaces to and from the ACEScg colorspace, which is the colorspace we will be doing most of our work in due to its much wider gamut compared to other colorspaces. This explanation is course an oversimplification as color and color management workflows are a complicated subject and going in depth on such a matter goes beyond the scope of this article. Here we will be exploring how to manually setup Blender, Houdini and Natron for working with ACES version 1.0.3 in Linux.</p>
+<p>If you would like to learn more about ACES check out the <a href="https://opencolorio.readthedocs.io/en/latest/index.html">official documentation</a> over at opencolorio.org and the <a href="https://acescentral.com/user-guides/">ACES Primer</a> over at acescentral.</p>
+<p>If you prefer a more practical guide from an industry professional check out Chris&rsquo;s <a href="https://chrisbrejon.com/cg-cinematography/chapter-1-5-academy-color-encoding-system-aces/">CG Cinematography</a> amazing and free ebook.</p>
+<p>Lets get started.</p>
+
+
+<h2 id="downloading-the-configuration-files" class="hoverMe">
+    Downloading the configuration files 
+    <a href="#downloading-the-configuration-files" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>Download the OCIO configurations from the link below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">https://github.com/imageworks/OpenColorIO-Configs
+</code></pre></div><p>Extract the contents of the file on a folder somewhere on your system and take note of the location because we will need to reference it on the next step.</p>
+<p>We will be using the <code>config.ocio</code> located in the folder for aces version <code>1.0.3</code>.</p>
+
+
+<h2 id="create-an-environment-variable-for-aces" class="hoverMe">
+    Create an Environment Variable for ACES 
+    <a href="#create-an-environment-variable-for-aces" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>Before we go into how to setup each application individually to look for our version of ACES, it is worth noting that most CG applications out there are configured to look for an environment variable on our systems which points to the location of ACES. On this part of the article we will look into how to create such an environment variable in Linux.</p>
+<p>To do that we need to edit our <code>.bashrc</code> file. Open a terminal and type the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo nano ~/.bashrc
+</code></pre></div><p>Now that we have our <code>bashrc</code> file open in our text editor nano, we will add the following command at the end of the file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">OCIO</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;/path/to/my/config.ocio&#34;</span>
+</code></pre></div><p>After you are done press <strong>CTRL+X</strong> to save our file and exit. The changes will be applied after we restart the shell. If we want to apply the changes during the current session type the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">source</span> ~/.bashrc
+</code></pre></div><p>To check if our environment variable has been setup as intended we can type the <code>printenv</code> command and pipe it into <code>less</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">printenv | less
+</code></pre></div><p>We should see our OCIO environment variable somewhere inside the list that pops up into less.Press <strong>Q</strong> to quit less.</p>
+
+
+<h2 id="blender" class="hoverMe">
+    Blender 
+    <a href="#blender" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>To setup blender to work with aces in an efficient manner we can create a shell script that exports the <code>config.ocio</code> location as a variable and then starts the application.</p>
+<p>Create a file and name it <code>blender-aces.sh</code>. Open it and add the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff79c6">#!/bin/bash
+</span><span style="color:#ff79c6"></span>
+<span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">OCIO</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;/path/to/my/config.ocio&#34;</span>
+
+/path/to/my/blenderExecutable
+</code></pre></div><p>We need to make that script executable by typing the following command :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x /path/to/blender-aces.sh
+</code></pre></div><p>Our script is now executable. Next we simply need to create a shortcut pointing to that script and place it wherever we like.</p>
+<p>Remember to check the <a href="https://www.wiki.blender.org/wiki/Source/Render/ColorManagement">Color Management</a> section of Blender&rsquo;s documentation for its limitations when working with ACES so you don&rsquo;t run into any sort of trouble.</p>
+
+
+<h2 id="natron" class="hoverMe">
+    Natron 
+    <a href="#natron" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>For natron to locate aces we can copy and paste the <code>aces_1.0.3</code> folder inside the <code>Natron-2.x.x/Resources/OpenColorIO-Configs/</code> directory.</p>
+<p>Open natron and under the Edit menu select <strong>Preferences</strong> and then <strong>Color Management</strong> to pick <code>aces_1.0.3</code>. Restart natron and its default colorspace will be set as aces 1.0.3 from now on.</p>
+<p>Additionally we have to remember that like similar packages, natron applies a LUT to the viewer which might lead to visually unexpected results when working in ACES. Remember to select the correct LUT in the project settings (hotkey : S) under the <strong>LUT</strong> tab.</p>
+
+
+<h2 id="houdini" class="hoverMe">
+    Houdini 
+    <a href="#houdini" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>For houdini we need to edit the <code>houdini.env</code> file. The file is located inside in the appropriate houdini version folder located in our users <code>home/</code> directory.
+Open <code>houdini.env</code> using any text editor and add the following text to it :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">OCIO=&#34;/path/to/my/config.ocio&#34;
+</code></pre></div>
+
+<h2 id="clarisse" class="hoverMe">
+    Clarisse 
+    <a href="#clarisse" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>To work in ACES within clarisse all you have to do is go under <strong>Color Management</strong> tab of the <strong>Edit</strong> menu click <strong>Preferences</strong> and set the Ocio Config File to look for the path of our <code>config.ocio</code>. Make sure to click <strong>Use Ocio Config file</strong> to enable clarisse to look for our configuration file.</p>
+
+
+<h2 id="done" class="hoverMe">
+    Done 
+    <a href="#done" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>On this article we briefly looked into how to download and create an environment variable for aces, how to  manually setup Blender, Houdini,Natron and Clarisse to look for it. I hope you found this article useful. If you read the official documentation you might have noticed that this article is similar to the &lsquo;Quick Start for Artists&rsquo; entry. If you would like to use a different version of ACES such as <code>v2</code> or if you&rsquo;re not an artist then you might want to check out the official documentation for more information on how to do that.</p>
+<p>There is a lot more to be said for working in ACES within any of the applications mentioned above and this article does not even barely scratch the surface. You have to convert your textures to acescg, you probably cannot trust your color picker and you have to correctly setup your transforms as you are transferring files from one application to another to make sure you are getting an accurate result. That being said, guides for each application individually are in the works for future entries. If you would like to read a guide for an application not mentioned here feel free to send me a message.</p>
+
+    </div>
+    <div class="">
+        
+        <p>---</p>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="QNRPF64LXPZTU" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
+                name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_GR/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+        <p class="text-muted mt-2">If you find content like this useful you may donate a small amount to help support
+            this website and cover the costs.</p>
+            
+        
+    </div>
+</div>
+</div>
+
+
+    
+     <footer class="py-3 mt-5 container border-top">
+    <p class="text-center pt-4"> &copy; 2022 Andrew V | All rights reserved</p>
+</footer>
+
+    
+</body>
+
+</html>
