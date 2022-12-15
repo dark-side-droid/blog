@@ -24,22 +24,25 @@
     <title>Software</title>
 </head>
 
-<body class="bg-light container">
-    
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <span class="fs-4"><span class="fw-bold">Andrew&#39;s</span> Blog</span>
-    </a>
+<body class="container">
+    <div class="d-flex flex-column justify-content-center d-lg-flex flex-lg-row justify-content-lg-between py-4 align-items-center d-sm-flex flex-sm-column justify-content-sm-center my-4 pb-3 mb-4 border-bottom">
+    <p class="d-none d-lg-inline pt-3">Ten thousand tiny steps</p>
+    <a href="/" class="text-decoration-none"> <h1 class="display-4 brand">Andrew&#39;s Blog</h1></a>
+    <div class="d-flex flex-row justify-content-lg-between">
+        <a href="/" class="nav-link text-dark pe-4" aria-current="page">Home</a>
+        <a href="/posts" class="nav-link text-dark pe-4">Posts</a>
+        <a href="/tags" class="nav-link text-dark">Tags</a>
+    </div>
+</div>
 
-    <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/" class="nav-link text-dark" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="/posts" class="nav-link text-dark">Posts</a></li>
-        <li class="nav-item"><a href="/tags" class="nav-link text-dark">Tags</a></li>
-    </ul>
-</header>
-    
 
-    <div class="page archive"><div class="d-flex flex-row py-3"><i class="bi bi-tag-fill"></i><span class="fs-2 pb-5"> Software</span></div><div class="d-flex flex-row border-bottom pb-3 mb-2">
+
+
+
+    <div class="page archive">
+        <span class="my-3"
+                    style="background-image:url(/raymond-rasmusson-tags-jpg); background-size:cover ;background-position: center; width:100%; height:250px; display:block; border-radius:5px;margin-top:20px;"></span>
+        <p class="text-muted">Image by Raymond Rasmusson @ Unsplash</p><div class="d-flex flex-row border-bottom pb-3 mb-2">
                     <span class="bi bi-calendar text-dark">
                         <span class="fs-5 fw-bold">2022</span>
                     </span>
@@ -52,9 +55,17 @@
                     </article></div></div>
     
      <footer class="py-3 mt-5 container border-top">
-        <p class="text-center pt-4"> &copy; 2022 Andrew V | All rights reserved</p>
-    </footer>
+    
+    <div class="d-flex flex-row justify-content-center fs-4 pt-3">
+        <a href="https://www.github.com/dark-side-droid" class="text-black" target="_blank"><i class="bi bi-github pe-3"></i></a>
+        <a href="https://t.me/+cH3f1gJUqCY2NTI0" class="text-black" target="_blank"><i class="bi bi-telegram pe-3"></i></a>
+        <a href="http://localhost:1313/index.xml" class="text-black" target="_blank"><i class="bi bi-rss-fill pe-3"></i></a>
+        <a href="mailto:dark-side-droid@pm.me" class="text-black"><i class="bi bi-envelope-paper-fill"></i></a>
+    </div>
+    <p class="text-center pt-4"> &copy; 2022 Andrew V | All rights reserved</p>
+</footer>
 
+    
 </body>
 
 </html>
