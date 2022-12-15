@@ -13,7 +13,7 @@
     }
     
     .brand{
-            font-family: 'Fake Serif' !important;
+            font-family: 'Fake Serif', Helvetica, Arial !important;
             color:black;
     }
 
