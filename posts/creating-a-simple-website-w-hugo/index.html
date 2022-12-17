@@ -50,7 +50,7 @@
         <h1 class="display-6 mb-3 fw-bold" id="#">Creating a simple blog with Hugo</h1>
         <h4 class="fs-4 mb-4">How to instal Hugo, create a simple blog and deploy to Github Pages</h4>
         <div class="">
-            <p class="text-muted">Published on December 17, 2022 <span class="bi bi-dot"> 2068 words </span><span class="bi bi-dot"> 10 min read</span>
+            <p class="text-muted">Published on December 17, 2022 <span class="bi bi-dot"> 2070 words </span><span class="bi bi-dot"> 10 min read</span>
             
                 <span class="bi bi-dot "></span>
                 
@@ -98,8 +98,8 @@
     What is Hugo 
     <a href="#what-is-hugo" class="text-decoration-none"> # </a>
 </h2>
-<p>If you are like me and don&rsquo;t particularly enjoy writing content for a static webpage in pure HTML and at the same time you do not want to use a CMS like Wordpress, i have a great solution for you.</p>
-<p>Enter Hugo. A blazingly fast SSG or static site generator that generates web pages with content extracted from markdown files. Plain and simple its fast, very customizable and has great documentation.</p>
+<p>If you are like me and don&rsquo;t particularly enjoy writing content for a static webpage in pure HTML and at the same time you do not want to use a CMS like Wordpress, i have a great solution for you.
+Enter Hugo. A blazingly fast SSG or static site generator that generates web pages with content extracted from markdown files. Plain and simple its fast, very customizable and has great documentation.</p>
 <p>Hugo ships with very cool capabilities and premade templates that help you make quick work of SEO, commenting, analytics and other functions. You simply add a few lines to your config file and you’re set !</p>
 <p>Additionally it comes with a list of <a href="https://themes.gohugo.io/">over 300 themes</a> to choose from which is great for simple blogs, brochure-type pages and documentation sites. If you don’t find something that fits your needs you can still build your own using traditional HTML / CSS / JavaScript techniques like i did, it wasn’t that difficult and there are some great tutorials out there on how to use Hugo’s templating engine such as the one by <a href="https://www.youtube.com/watch?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3&amp;v=qtIqKaDlqXo">Mike Dane</a>.</p>
 <p>Hugo is available for Mac, Windows and Linux.</p>
@@ -109,7 +109,7 @@
     Installing Hugo 
     <a href="#installing-hugo" class="text-decoration-none"> # </a>
 </h2>
-<p>I work with Debian and installing hugo was a breeze. All i had to do was type one command on the terminal and i was ready to configure and deploy my new site. Don&rsquo;t worry, if you&rsquo;re not on Debian we&rsquo;ll look at how you can install HUGO on other systems as well.</p>
+<p>I work with Debian and installing hugo was a breeze. All i had to do was type one command on the terminal and i was ready to configure and deploy my new site. Don&rsquo;t worry, if you&rsquo;re not on Debian we&rsquo;ll look at how you can install HUGO on Windows as well.</p>
 
 
 <h3 id="installing-on-linux" class="hoverMe">
@@ -133,7 +133,7 @@ brew install hugo
     Installing on Windows 
     <a href="#installing-on-windows" class="text-decoration-none"> # </a>
 </h3>
-<p>nstalling hugo on windows is a little bit more difficult than installing on linux, involving just a few more steps. To begin, we will need to download the Windows-64bit current release from github. <a href="https://github.com/gohugoio/hugo/releases/tag/v0.102.1">Link</a>.</p>
+<p>Installing hugo on windows is a little bit more difficult than installing on linux, involving just a few more steps. To begin, we will need to download the Windows-64bit current release from github. <a href="https://github.com/gohugoio/hugo/releases/tag/v0.102.1">Link</a>.</p>
 <p>After we&rsquo;ve selected and downloaded the appropriate relase from github, we will need to create some folders and then extract there the contents of the zip file that we downloaded. The path we will need to create is this :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:/Hugo/bin
 </code></pre></div><p>To test if its working open a command prompt in this folder and type <code>hugo version</code>. It should reply with the version of hugo that we&rsquo;ve downloaded which means its working properly. Next we need to create an environment variable for hugo.</p>
@@ -146,8 +146,8 @@ brew install hugo
     Creating a new Hugo site 
     <a href="#creating-a-new-hugo-site" class="text-decoration-none"> # </a>
 </h2>
-<p>Creating a new site with hugo is very easy. Simply go inside a folder where you want the new site to be located, open a terminal there and type</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hugo new site new-site-name-here
+<p>Creating a new site with hugo is easy. Simply go inside a folder where you want the new site to be located, open a terminal there and type</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hugo new site site-name-here
 </code></pre></div><p>A new folder will be created with the contents of your new site. Congratulations, the skeleton of your new site is ready. The folder structure should look like this :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">.
 ├── archetypes
@@ -299,7 +299,7 @@ pygmentsUseClasses = true
 
 [markup.highlight]
 	noClasses = false
-</code></pre></div><p>This might look a little complicated but after spending a couple of hours working with hugo it will seem fairly straightforward. The contents of the above file were taken from the example posted in the documentation of the papermod at github, and were altered just a bit to fit the contents of this tutorial.</p>
+</code></pre></div><p>This might look a little complicated but after spending a couple of hours working with hugo and its documentation it will all seem fairly straightforward. The contents of the above file were taken from the example posted in the documentation of the papermod at github, and were altered just a bit to fit the contents of this tutorial.</p>
 <p>For now just take notice that the baseURL parameter at the top of the page matters and if you’re planning to publish a blog with your own purchased domain name you should use that. Alternatively set it to <code>&quot;/&quot;</code>.</p>
 <p>To set the theme all you need to do is set <code>theme = hugo-PaperMod</code> or the name of whatever theme you are using which we have already done in the settings we can see above. The name is case sensitive and it must match exactly the name of the folder inside the themes directory.</p>
 <p>To check how our website looks we can temporarily start the hugo server</p>
@@ -372,7 +372,7 @@ I would like to say hello.
     Done 
     <a href="#done" class="text-decoration-none"> # </a>
 </h2>
-<p>This concludes this tutorial on how to create a simple blog with hugo, add a theme, build and deploy it to github pages. Hope you enjoyed it and learned something in the process. For more information on HUGO and its capailities check out the great documentation over at <a href="https://gohugo.io/documentation/">gohugo.io</a></p>
+<p>This concludes this tutorial on how to create a simple blog with hugo, add a theme, build and deploy it to github pages. Hope you enjoyed it and learned something in the process. For more information on HUGO and its capabilities check out the great documentation over at <a href="https://gohugo.io/documentation/">gohugo.io</a></p>
 
     </div>
     <div class="">
