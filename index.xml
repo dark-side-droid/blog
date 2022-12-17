@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved</copyright>
-    <lastBuildDate>Fri, 14 Oct 2022 13:58:16 +0300</lastBuildDate><atom:link href="https://blog.andrew-v.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Dec 2022 13:55:39 +0200</lastBuildDate><atom:link href="https://blog.andrew-v.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a simple blog with Hugo</title>
+      <link>https://blog.andrew-v.com/posts/creating-a-simple-website-w-hugo/</link>
+      <pubDate>Sat, 17 Dec 2022 13:55:39 +0200</pubDate>
+      
+      <guid>https://blog.andrew-v.com/posts/creating-a-simple-website-w-hugo/</guid>
+      <description>How to instal Hugo, create a simple blog and deploy to Github Pages</description>
+    </item>
+    
     <item>
       <title>Setup CG Applications for ACES in Linux</title>
       <link>https://blog.andrew-v.com/posts/aces/aces-blender/</link>
