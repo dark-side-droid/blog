@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Andrew&#39;s Blog</title>
+    <link>https://blog.andrew-v.com/tags/programming/</link>
+    <description>Recent content in Programming on Andrew&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.andrew-v.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C Programming Language  - Chapter 1 Solutions</title>
+      <link>https://blog.andrew-v.com/posts/c-programming/exercises-1/</link>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.andrew-v.com/posts/c-programming/exercises-1/</guid>
+      <description>The solution to each exercise of Chapter 1 of the &amp;lsquo;The C Programming Language&amp;rsquo; book.</description>
+    </item>
+    
+  </channel>
+</rss>

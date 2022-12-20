@@ -7,11 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved</copyright>
-    <lastBuildDate>Sat, 17 Dec 2022 13:55:39 +0200</lastBuildDate><atom:link href="https://blog.andrew-v.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.andrew-v.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C Programming Language  - Chapter 1 Solutions</title>
+      <link>https://blog.andrew-v.com/posts/c-programming/exercises-1/</link>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.andrew-v.com/posts/c-programming/exercises-1/</guid>
+      <description>The solution to each exercise of Chapter 1 of the &amp;lsquo;The C Programming Language&amp;rsquo; book.</description>
+    </item>
+    
     <item>
       <title>Creating a simple blog with Hugo</title>
       <link>https://blog.andrew-v.com/posts/creating-a-simple-website-w-hugo/</link>
-      <pubDate>Sat, 17 Dec 2022 13:55:39 +0200</pubDate>
+      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.andrew-v.com/posts/creating-a-simple-website-w-hugo/</guid>
       <description>How to instal Hugo, create a simple blog and deploy to Github Pages</description>
