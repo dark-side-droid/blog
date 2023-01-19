@@ -44,11 +44,10 @@
 
 
     
-
 <div class="pt-3 mt-3 ">
     <div class="mb-4">
         <h1 class="display-6 mb-3 fw-bold" id="#">Imprecision and Overflow</h1>
-        <h4 class="fs-4 mb-4">We are working with the fundamental limitation of computing with a finite number of bits</h4>
+        <h3 class="fs-4 mb-4">We are working with the fundamental limitation of computing with a finite number of bits</h3>
         <div class="">
             <p class="text-muted">Published on January 18, 2023 <span class="bi bi-dot"> 1588 words </span><span class="bi bi-dot"> 8 min read</span>
             
@@ -131,7 +130,7 @@ Error: 2.530273
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">5001.000000
 Expected: 5001
 Error: 0.000000
-</code></pre></div><p>This seems to fix the problem although it is important to understand that this issue cannot be fixed , it can only be improved upon with &ldquo;better&rdquo; data types which should be carefully selecting according to the needs of the application that is being designed. In fact if we change our program to iterate from 50.000 to 5.000.000 we will see the error become noticeable again. For scientific or financial applications where precision is key there are better data types that can be used such as the <code>long double</code>. Additionally there are libraries out there that improve upon the issue such as Multiple Precision Floating-point Reliable (MPFR) and GNU Multiple Precision (GMP).</p>
+</code></pre></div><p>This seems to fix the problem although it is important to understand that this issue cannot be fixed , it can only be improved upon with &ldquo;better&rdquo; data types which should be carefully assigned according to the needs of the application that is being designed. In fact if we change our program to iterate from 50.000 to 5.000.000 we will see the error become noticeable again. For scientific or financial applications where precision is key there are better data types that can be used such as the <code>long double</code>. Additionally there are libraries out there that improve upon the issue such as Multiple Precision Floating-point Reliable (MPFR) and GNU Multiple Precision (GMP).</p>
 
 
 <h2 id="integer-overflow" class="hoverMe">
@@ -271,7 +270,7 @@ Error: 0.000000
 0
 0
 </code></pre></div><p>Works like a charm.</p>
-<p>Another way to increase the maximum limit of your integers without using a bigger data type such as <code>long</code> is to used <code>unsigned int</code> over just int. An unsigned int cannot be a negative number but retains its range which means that it will have a greater positive maximum than a normal <code>int</code>. On my machine that maximum is <strong>4.294.967.295</strong>.</p>
+<p>Another way to increase the maximum limit of your integers without using a bigger data type such as <code>long</code> is to use <code>unsigned int</code> over just int. An unsigned int cannot be a negative number but retains its range which means that it will have a greater positive maximum than a normal <code>int</code>. On my machine that maximum is <strong>4.294.967.295</strong>.</p>
 <hr>
 <p>In conclusion, floating point imprecision and integer overflow are evidently important issues that can affect the accuracy and correctness of a program. You can read some real world <a href="https://en.m.wikipedia.org/wiki/Integer_overflow#Examples">examples</a> of problems caused by FPI and IO over at Wikipedia. These examples demonstrate the importance of being aware of floating point imprecision and integer overflow, and taking the appropriate measures to avoid them in order to prevent serious problems in real-world applications.</p>
 
