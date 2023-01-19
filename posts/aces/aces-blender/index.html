@@ -183,14 +183,23 @@ Open <code>houdini.env</code> using any text editor and add the following text t
     <div class="">
         
         <p>---</p>
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-            <input type="hidden" name="hosted_button_id" value="QNRPF64LXPZTU" />
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
-                name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-            <img alt="" border="0" src="https://www.paypal.com/en_GR/i/scr/pixel.gif" width="1" height="1" />
-        </form>
-        <p class="text-muted mt-2">If you find content like this useful you may donate a small amount to help support
-            this website and cover the costs.</p>
+       <div id="donate-button-container">
+            <div id="donate-button"></div>
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'JXV4HE8J74PJY',
+                image: {
+                src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                alt:'Donate with PayPal button',
+                title:'PayPal - The safer, easier way to pay online!',
+                }
+                }).render('#donate-button');
+                </script>
+            </div>
+
+        <p class="text-muted mt-2">If you found this post useful you may donate a small amount to support my effort in creating more content like this.</p>
             
         
     </div>

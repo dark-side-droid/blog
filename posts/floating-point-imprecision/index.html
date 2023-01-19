@@ -50,7 +50,7 @@
         <h1 class="display-6 mb-3 fw-bold" id="#">Imprecision and Overflow</h1>
         <h4 class="fs-4 mb-4">We are working with the fundamental limitation of computing with a finite number of bits</h4>
         <div class="">
-            <p class="text-muted">Published on January 18, 2023 <span class="bi bi-dot"> 1589 words </span><span class="bi bi-dot"> 8 min read</span>
+            <p class="text-muted">Published on January 18, 2023 <span class="bi bi-dot"> 1588 words </span><span class="bi bi-dot"> 8 min read</span>
             
                 <span class="bi bi-dot "></span>
                 
@@ -189,7 +189,7 @@ Error: 0.000000
 0
 0
 0
-</code></pre></div><p>As our <code>i</code> gets in the billions by reaching <strong>1073741824</strong> it tries to double itself one more time which means it would reach the value of 2.147.483.648, just 1 higher than the maximum positive value of an <code>int</code> on my system. Surpassing this value means the our int overflows its allocated bit size and falls back into its minimum value.</p>
+</code></pre></div><p>As our <code>i</code> gets in the billions by reaching <strong>1073741824</strong> it tries to double itself one more time which means it would reach the value of 2.147.483.648, just 1 higher than the maximum positive value of an <code>int</code> on my system. Surpassing this value means the <code>int</code> overflows its allocated bit size and falls back into its minimum value.</p>
 <p>Likewise with the FPI we can use a &ldquo;better&rdquo; data type in order to accomodate our needs of an integer substantially higher than two billion. In this case we could use the <code>long int</code> data type. If you need even higher range you could opt for using the <code>long long int</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
 </span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;unistd.h&gt;</span><span style="color:#ff79c6">
@@ -293,14 +293,23 @@ Error: 0.000000
     <div class="">
         
         <p>---</p>
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-            <input type="hidden" name="hosted_button_id" value="QNRPF64LXPZTU" />
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
-                name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-            <img alt="" border="0" src="https://www.paypal.com/en_GR/i/scr/pixel.gif" width="1" height="1" />
-        </form>
-        <p class="text-muted mt-2">If you find content like this useful you may donate a small amount to help support
-            this website and cover the costs.</p>
+       <div id="donate-button-container">
+            <div id="donate-button"></div>
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'JXV4HE8J74PJY',
+                image: {
+                src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                alt:'Donate with PayPal button',
+                title:'PayPal - The safer, easier way to pay online!',
+                }
+                }).render('#donate-button');
+                </script>
+            </div>
+
+        <p class="text-muted mt-2">If you found this post useful you may donate a small amount to support my effort in creating more content like this.</p>
             
         
     </div>
