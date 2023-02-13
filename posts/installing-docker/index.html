@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal blog of computer graphics artist Andrew V. Andrew specializes in 3D, animation and visual effects. Creator of the tabletop roleplaying game Amber Arcadia.">
+    <meta property="og:title" content="Installing Docker on Debian 11: A Step-by-Step Guide" />
+<meta property="og:description" content="Following the official documentation on how to install Docker on Debian" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.andrew-v.com/posts/installing-docker/" />
+<meta property="og:image" content="https://blog.andrew-v.com/containers.jpg" />
+<meta property="article:published_time" content="2023-02-13T22:58:18+02:00" />
+<meta property="article:modified_time" content="2023-02-13T22:58:18+02:00" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.andrew-v.com/containers.jpg"/>
+
+<meta name="twitter:title" content="Installing Docker on Debian 11: A Step-by-Step Guide"/>
+<meta name="twitter:description" content="Following the official documentation on how to install Docker on Debian"/>
+
+    
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <title>Installing Docker on Debian 11: A Step-by-Step Guide</title>
+</head>
+
+<body class="container">
+    <div class="d-flex flex-column justify-content-center d-lg-flex flex-lg-row justify-content-lg-between py-4 align-items-center d-sm-flex flex-sm-column justify-content-sm-center my-4 pb-3 mb-4 border-bottom">
+    <a href="https://paizo.com/community/blog/v5748dyo6si7y?The-ORC-Alliance-Grows" class="text-decoration-none text-black" target="_blank"><p class="d-none d-lg-inline pt-3">The time of the ORC has come</p></a>
+    <a href="/" class="text-decoration-none"> <h1 class="display-4 brand">Andrew&#39;s notes</h1></a>
+    <div class="d-flex flex-row justify-content-lg-between mt-4 mt-lg-1">
+        <a href="/" class="nav-link text-dark pe-4" aria-current="page">Home</a>
+        <a href="/posts" class="nav-link text-dark pe-4">Posts</a>
+        <a href="/tags" class="nav-link text-dark">Tags</a>
+    </div>
+</div>
+
+
+
+
+
+    
+<div class="pt-3 mt-3 ">
+    <div class="mb-4">
+        <h1 class="display-6 mb-3 fw-bold" id="#">Installing Docker on Debian 11: A Step-by-Step Guide</h1>
+        <h3 class="fs-4 mb-4">Following the official documentation on how to install Docker on Debian</h3>
+        <div class="">
+            <p class="text-muted">Published on February 13, 2023 <span class="bi bi-dot"> 643 words </span><span class="bi bi-dot"> 4 min read</span>
+            
+                <span class="bi bi-dot "></span>
+                
+                
+                
+                <a href="https://blog.andrew-v.com/tags/software/" class="text-decoration-none"><span
+                        class="bg-primary text-white px-2 py-2  rounded">Software</span>
+                </a>
+                
+            
+            </p>
+        </div>
+
+    </div>
+    <div class="my-4"
+        style="border:none;background-image:url(/containers.jpg);background-size:cover ;background-position: center; height:400px; border-radius:5px; width: 100%;"></div>
+    <i class="text-muted">Image by Frank Mckenna</i>
+    <div class="mb-5">
+    
+    <div class="fs-5 my-3">
+        <p>Docker is a powerful tool for running containers, and its installation process can sometimes be confusing, especially if you are new to the technology. In this article, we will be guiding you through the process of installing Docker on Debian 11, making it easy to follow along and get it up and running in no time.</p>
+<p>Please note that the installation process of Docker has already been covered in great detail in the official Docker documentation. However, the information can be scattered across multiple pages, making it challenging to follow. This article aims to consolidate all the necessary steps in one place to help you with the installation process.</p>
+<p>I won&rsquo;t be explaining the purpose or functionality of the various technologies used during the installation of Docker as this article is focused on the installation process itself. Let&rsquo;s dive in and get started with the installation process.</p>
+<p>The entire process for a clean installation as recommended by the folks over at Docker can be summarized in three steps:</p>
+<ul>
+<li>Pre-setup and Cleanup</li>
+<li>Download the latest version</li>
+<li>Setup</li>
+</ul>
+
+
+<h2 id="step-1---pre-setup-and-cleanup" class="hoverMe">
+    Step 1 - Pre-setup and Cleanup 
+    <a href="#step-1---pre-setup-and-cleanup" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>First things first, update and upgrade.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update -y <span style="color:#ff79c6">&amp;&amp;</span> sudo apt upgrade -y
+</code></pre></div><p>We need to load KVM modules</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo modprobe kvm
+
+$ sudo modprobe kvm_intel  <span style="color:#6272a4"># intel processors</span>
+$ sudo modprob kvm_amd <span style="color:#6272a4"># amd processors</span>
+</code></pre></div><p>Check who owns <strong>/dev/kvm</strong>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -al /dev/kvm 
+crw-rw----+ <span style="color:#bd93f9">1</span> root kvm 10, <span style="color:#bd93f9">232</span> Apr  <span style="color:#bd93f9">8</span> 06:11 /dev/kvm
+</code></pre></div><p>Add your user to the KVM group and reboot:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo usermod -aG kvm <span style="color:#8be9fd;font-style:italic">$USER</span>
+
+$ sudo reboot
+</code></pre></div><p>Then we can remove any previous version of docker-desktop along with any previous configuration, symlinks and data files. Ignore this step if you are installing docker for the first time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rm -r <span style="color:#8be9fd;font-style:italic">$HOME</span>/.docker/desktop
+
+$ sudo rm /usr/local/bin/com.docker.cli
+
+$ sudo apt purge docker-desktop
+</code></pre></div>
+
+<h2 id="step-2---download-and-install-docker" class="hoverMe">
+    Step 2 - Download and install Docker 
+    <a href="#step-2---download-and-install-docker" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<p>Install dependencies:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install <span style="color:#f1fa8c">\
+</span><span style="color:#f1fa8c"></span>    ca-certificates <span style="color:#f1fa8c">\
+</span><span style="color:#f1fa8c"></span>    curl <span style="color:#f1fa8c">\
+</span><span style="color:#f1fa8c"></span>    gnupg <span style="color:#f1fa8c">\
+</span><span style="color:#f1fa8c"></span>    lsb-release
+</code></pre></div><p>Add Docker&rsquo;s official GPG key:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo mkdir -m <span style="color:#bd93f9">0755</span> -p /etc/apt/keyrings
+
+$ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+</code></pre></div><p>If you are using a firewall which blocks most requests like myself you might find that <code>curl</code> was blocked. Config your firewall to allow curl if you run into an error at this stage.</p>
+<p>Use the following command to setup the repository:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">\
+</span><span style="color:#f1fa8c"></span>  <span style="color:#f1fa8c">&#34;deb [arch=</span><span style="color:#ff79c6">$(</span>dpkg --print-architecture<span style="color:#ff79c6">)</span><span style="color:#f1fa8c"> signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+</span><span style="color:#f1fa8c">  </span><span style="color:#ff79c6">$(</span>lsb_release -cs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c"> stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</code></pre></div><p>At this stage take a moment to download the latest <strong>deb</strong> package from their <a href="https://docs.docker.com/desktop/install/debian/">website</a>. When the download is done proceed.</p>
+
+
+<h2 id="step-3---setup" class="hoverMe">
+    Step 3 - Setup 
+    <a href="#step-3---setup" class="text-decoration-none"> # </a>
+</h2>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get update
+
+$ sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+$ sudo apt-get install ./docker-desktop-&lt;version&gt;-&lt;arch&gt;.deb
+</code></pre></div><p>It will take a while for the installation to complete, hopefully with no errors. Once it is done run the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl --user start docker-desktop
+</code></pre></div><p>Immediately you will be greeted with docker&rsquo;s interface. <strong>Remember to configure your firewall to allow docker and its processes otherwise it will be stuck at this stage, unable to start or stop properly</strong>.</p>
+<p>To enable docker to start on boot:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl --user <span style="color:#8be9fd;font-style:italic">enable</span> docker-desktop
+</code></pre></div><p>Check that docker is running properly. The commands should return no errors.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker compose version
+
+$ docker --version
+
+$ docker version
+</code></pre></div><p>Done ! Docker should be installed properly and using the <code>docker run -d -p 80:80 docker/getting-started</code> command in a terminal should work.</p>
+
+
+<h3 id="dockerhub-login" class="hoverMe">
+    Dockerhub Login 
+    <a href="#dockerhub-login" class="text-decoration-none"> # </a>
+</h3>
+<p>To login, first we need to create a gpg-key and then use <code>pass</code> with our public key. You will be prompted for a password when generating your key. Do not forget this password as you might be prompted by docker to enter this password when the application starts.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gpg --full-generate-key
+
+$ pass init &lt;generated gpg-id public key here without the brackets&gt;
+</code></pre></div><p>If you completed the above steps correctly you will be able to login normally in Docker Desktop. Congrats !</p>
+
+    </div>
+    <div class="">
+        
+        <p>---</p>
+       <div id="donate-button-container">
+            <div id="donate-button"></div>
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'JXV4HE8J74PJY',
+                image: {
+                src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                alt:'Donate with PayPal button',
+                title:'PayPal - The safer, easier way to pay online!',
+                }
+                }).render('#donate-button');
+                </script>
+            </div>
+
+        <p class="text-muted mt-2">If you found this post useful you may donate a small amount to support my effort in creating more content like this.</p>
+            
+        
+    </div>
+</div>
+
+
+
+    
+     <footer class="py-3 mt-5 container border-top">
+    
+    <div class="d-flex flex-row justify-content-center fs-4 pt-3">
+        <a href="https://www.github.com/dark-side-droid" title="Visit my Github" class="text-black" target="_blank"><i class="bi bi-github pe-4"></i></a>
+        <a href="https://t.me/+cH3f1gJUqCY2NTI0" title="Stay updated on Telegram" class="text-black" target="_blank"><i class="bi bi-telegram pe-4"></i></a>
+        <a href="/index.xml" title="View the RSS sitemap" class="text-black" target="_blank"><i class="bi bi-rss-fill "></i></a>
+    </div>
+    <p class="text-center pt-4"> &copy; 2023 Andrew V | All rights reserved</p>
+</footer>
+
+    
+</body>
+
+</html>
