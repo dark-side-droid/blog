@@ -1,121 +1,130 @@
-@font-face{
+@font-face {
     font-family: 'Fake Serif';
     src: url('Fake Serif.ttf');
 }
 
-    
-    * {
-        font-family:Helvetica, Arial !important;
-    }
-    
-    code{
-            font-family: monospace !important;
-    }
-    
-    .brand{
-            font-family: 'Fake Serif', Helvetica, Arial !important;
-            color:black;
-    }
-
-    .gray-color {
-        background-color: rgba(23, 30, 44, 0.05);
-        color: rgb(0, 0, 0) !important;
-    }
-
-    .gray-color-no-bg {
-        color: rgb(0, 0, 0, .75) !important;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    .no-border {
-        border: none !important;
-    }
-
-    .animate-jump {
-        transition: .2s ease-in;
-        /*border: 9px solid rgba(0,0,0,0.02);*/
-    }
-
-    .animate-jump:hover {
-        transform: translateY(-10px);
-        cursor: pointer;
-    }
-
-    .animate-scale {
-        transition: .1s linear;
-
-    }
-
-    .animate-scale:hover {
-        transform: scale(1.005);
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.12);
-    }
-
-    img {
-        border: none !important;
-    }
-
-    .bmc-btn-text {
-        font-family: cursive;
-    }
-
-
-    .hoverMe > a {
-            display:none;
-    }
-    .hoverMe:hover > a{
-            display:inline !important;
-            
-    };
-    
-    code{
-            font-family: monospace !important;
-    }
-
-    .highlight>pre{
-            border-radius:5px !important;
-    }
-    
-@media (min-width: 300px){
-        .brand{
-                font-size:3em;
-        }
-
-        .w-75{
-                width:100% !important;
-        }
-
-        h4{
-                font-size:1.2em;
-        }
-
-        .border-l{
-                border-left:none;
-        }
-        
-        .w-25{
-                width:100% !important;
-        };
+* {
+    font-family: Helvetica, Arial !important;
 }
 
-@media (min-width: 900px){
-        
-        .w-75{
-            width:75% !important;
-            text-align:left;
-        }
-        
-        .w-25{
-                width:25% !important;
-        };
-        
-        h4{
-                font-size:1.5em;
-        }
-        .border-l{
-            border-left:1px solid rgba(0,0,0,.1);
-        }
+
+code {
+    font-family: monospace !important;
+}
+
+.brand {
+    font-family: 'Fake Serif', Helvetica, Arial !important;
+    color: black;
+}
+
+.gray-color {
+    background-color: rgba(23, 30, 44, 0.05);
+    color: rgb(0, 0, 0) !important;
+}
+
+.gray-color-no-bg {
+    color: rgb(0, 0, 0, .75) !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.animate-jump {
+    transition: .2s ease-in;
+    /*border: 9px solid rgba(0,0,0,0.02);*/
+}
+
+.animate-jump:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.animate-scale {
+    transition: .1s linear;
+
+}
+
+.animate-scale:hover {
+    transform: scale(1.005);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+img {
+    border: none !important;
+}
+
+.bmc-btn-text {
+    font-family: cursive;
+}
+
+
+.hoverMe>a {
+    display: none;
+}
+
+.hoverMe:hover>a {
+    display: inline !important;
+
+}
+
+;
+
+code {
+    font-family: monospace !important;
+}
+
+.highlight>pre {
+    border-radius: 5px !important;
+}
+
+
+@media (min-width: 300px) {
+    .brand {
+        font-size: 3em;
+    }
+
+    .w-75 {
+        width: 100% !important;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+
+    .border-l {
+        border-left: none;
+    }
+
+    .w-25 {
+        width: 100% !important;
+    }
+
+    ;
+}
+
+@media (min-width: 900px) {
+
+    .w-75 {
+        width: 75% !important;
+        text-align: left;
+    }
+
+    .w-25 {
+        width: 25% !important;
+    }
+
+    ;
+
+    h4 {
+        font-size: 1.5em;
+    }
+
+    .border-l {
+        border-left: 1px solid rgba(0, 0, 0, .1);
+    }
 }
