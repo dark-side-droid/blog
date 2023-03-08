@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Andrew&#39;s Blog</title>
+    <link>https://blog.andrew-v.com/tags/linux/</link>
+    <description>Recent content in Linux on Andrew&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Wed, 08 Mar 2023 19:07:10 +0200</lastBuildDate><atom:link href="https://blog.andrew-v.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Create Custom Application Menu Shortcuts in Linux</title>
+      <link>https://blog.andrew-v.com/posts/app-menu-shortcuts/</link>
+      <pubDate>Wed, 08 Mar 2023 19:07:10 +0200</pubDate>
+      
+      <guid>https://blog.andrew-v.com/posts/app-menu-shortcuts/</guid>
+      <description>Follow this guide to create your own application menu shortcuts</description>
+    </item>
+    
+    <item>
+      <title>Installing Docker on Debian 11: A Step-by-Step Guide</title>
+      <link>https://blog.andrew-v.com/posts/installing-docker/</link>
+      <pubDate>Mon, 13 Feb 2023 22:58:18 +0200</pubDate>
+      
+      <guid>https://blog.andrew-v.com/posts/installing-docker/</guid>
+      <description>Following the official documentation on how to install Docker on Debian</description>
+    </item>
+    
+  </channel>
+</rss>
