@@ -48,7 +48,7 @@
         <h1 class="display-6 mb-3 fw-bold" id="#">Introduction to Github CLI on Linux</h1>
         <h3 class="fs-4 mb-4">This guide introduces GitHub and GitHub CLI, a command line interface tool designed for fast and efficient interaction with GitHub, and provides steps for setting up an SSH key, using common commands, and setting up a repository.</h3>
         <div class="">
-            <p class="text-muted">Published on April 30, 2023 <span class="bi bi-dot"> 2525 words </span><span class="bi bi-dot"> 12 min read</span>
+            <p class="text-muted">Published on April 30, 2023 <span class="bi bi-dot"> 2577 words </span><span class="bi bi-dot"> 13 min read</span>
             
                 <span class="bi bi-dot "></span>
                 
@@ -118,7 +118,11 @@
 <p>In the “Title” field add a descriptive label like for example “Work Laptop”.</p>
 <p>Under “Key type” select “Authentication Key”.</p>
 <p>In the “Key” field add the contents of your <strong>public</strong> key which is :  <code>~/.ssh/id_ed5519.pub</code></p>
-<p>When you are done click “Add SSH key” and we are done.</p>
+<p>When you are done click “Add SSH key”.</p>
+<p><strong>NOTE:</strong></p>
+<p>Even if we&rsquo;ve setup an SSH key, if you want it to function properly with a repository you have already cloned using HTTPS instead of SSH you need to update the URL for the repository to use SSH. Run the following command :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+</code></pre></div><p>Replace username and repository with your own.</p>
 
 
 <h2 id="working-with-git" class="hoverMe">
