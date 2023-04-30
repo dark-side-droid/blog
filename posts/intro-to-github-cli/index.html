@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal blog of computer graphics artist Andrew V. Andrew specializes in 3D, animation and visual effects. Creator of the tabletop roleplaying game Amber Arcadia.">
+    <meta property="og:title" content="Introduction to Github CLI on Linux" />
+<meta property="og:description" content="This guide introduces GitHub and GitHub CLI, a command line interface tool designed for fast and efficient interaction with GitHub, and provides steps for setting up an SSH key, using common commands, and setting up a repository." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.andrew-v.com/posts/intro-to-github-cli/" />
+<meta property="og:image" content="https://blog.andrew-v.com/imagenamehere.jpg" />
+<meta property="article:published_time" content="2023-04-30T16:30:54+03:00" />
+<meta property="article:modified_time" content="2023-04-30T16:30:54+03:00" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.andrew-v.com/imagenamehere.jpg"/>
+
+<meta name="twitter:title" content="Introduction to Github CLI on Linux"/>
+<meta name="twitter:description" content="This guide introduces GitHub and GitHub CLI, a command line interface tool designed for fast and efficient interaction with GitHub, and provides steps for setting up an SSH key, using common commands, and setting up a repository."/>
+
+    
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <title>Introduction to Github CLI on Linux</title>
+</head>
+<body class="container">
+    <div class="d-flex flex-column justify-content-center d-lg-flex flex-lg-row justify-content-lg-between py-4 align-items-center d-sm-flex flex-sm-column justify-content-sm-center my-4 pb-3 mb-4 border-bottom">
+    <a href="https://paizo.com/community/blog/v5748dyo6si7y?The-ORC-Alliance-Grows" class="text-decoration-none text-black" target="_blank"><p class="d-none d-lg-inline pt-3">The time of the ORC has come</p></a>
+    <a href="/" class="text-decoration-none"> <h1 class="display-4 brand">Andrew&#39;s notes</h1></a>
+    <div class="d-flex flex-row justify-content-lg-between mt-4 mt-lg-1">
+        <a href="/" class="nav-link text-dark pe-4" aria-current="page">Home</a>
+        <a href="/posts" class="nav-link text-dark pe-4">Posts</a>
+        <a href="/tags" class="nav-link text-dark">Tags</a>
+    </div>
+</div>
+
+
+
+
+
+    
+<div class="pt-3 mt-3 ">
+    <div class="mb-4">
+        <h1 class="display-6 mb-3 fw-bold" id="#">Introduction to Github CLI on Linux</h1>
+        <h3 class="fs-4 mb-4">This guide introduces GitHub and GitHub CLI, a command line interface tool designed for fast and efficient interaction with GitHub, and provides steps for setting up an SSH key, using common commands, and setting up a repository.</h3>
+        <div class="">
+            <p class="text-muted">Published on April 30, 2023 <span class="bi bi-dot"> 2525 words </span><span class="bi bi-dot"> 12 min read</span>
+            
+                <span class="bi bi-dot "></span>
+                
+                
+                
+                <a href="https://blog.andrew-v.com/tags/linux/" class="text-decoration-none"><span
+                        class="bg-primary text-white px-2 py-2  rounded">Linux</span>
+                </a>
+                
+            
+            </p>
+        </div>
+
+    </div>
+    <div class="my-4"
+        style="border:none;background-image:url(/github.jpg);background-size:cover ;background-position: center; height:400px; border-radius:5px; width: 100%;"></div>
+    <i class="text-muted">Image by Praveen Thirumurugan</i>
+    <div class="mb-5">
+    
+    <h4 class="mt-4">Contents</h4>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#setup-an-ssh-key">Setup an SSH key</a></li>
+    <li><a href="#working-with-git">Working with Git</a>
+      <ol>
+        <li><a href="#installing-git">Installing git</a></li>
+      </ol>
+    </li>
+    <li><a href="#general-github-workflow">General Github Workflow</a>
+      <ol>
+        <li><a href="#creating-a-new-repository">Creating a new repository</a></li>
+        <li><a href="#working-towards-our-first-push">Working towards our first push</a></li>
+        <li><a href="#revert">Revert</a></li>
+        <li><a href="#working-with-branches">Working with branches</a></li>
+        <li><a href="#git-pull">Git Pull</a></li>
+      </ol>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</nav>
+    </div>
+    
+    <div class="fs-5 my-3">
+        <p>GitHub is a web-based platform that serves as a central hub for software development. It allows programmers to collaborate on projects, share code, and track changes to their codebase. GitHub is widely used by developers of all skill levels, from beginners to experienced professionals. It provides a powerful set of tools for managing software projects, including version control, issue tracking, and project management. With GitHub, it&rsquo;s easy to work with others on projects, share your code with the world, and contribute to open-source projects.</p>
+<p>GitHub CLI is a command line interface tool that allows you to interact with GitHub from your terminal. With it, you can create, manage, and view repositories, pull requests, issues, and more. It&rsquo;s designed to be fast and efficient, allowing you to perform common GitHub tasks without leaving your terminal.</p>
+<p>The CLI is available for Linux, macOS, and Windows. In this guide, we will focus on the Linux version of the tool.</p>
+<p>To use the CLI, you&rsquo;ll need to have a GitHub account and have it set up on your local machine. Once you have the CLI installed, you can start using it to perform a wide variety of tasks from the comfort of your terminal.</p>
+<p>On this guide we will get started by setting up an SSH key, which will allow you to authenticate with Github securely without having to enter your username and password each time.</p>
+<p>Next we will take a look at some of the most commonly used commands and we will setup an example repository.</p>
+<p>Let’s get started !</p>
+
+
+<h2 id="setup-an-ssh-key" class="hoverMe">
+    Setup an SSH key 
+    <a href="#setup-an-ssh-key" class="text-decoration-none"> # </a>
+</h2>
+<p>Normally when you work with git you’ll be prompted for a username ans personal access token in order to interact with your remote repositories. By setting up an SSH key on your machine and connecting it with Github you can bypass this process making the whole git workflow faster.</p>
+<p>To generate a new key we’ll need to open a terminal and use the command <code>ssh-keygen</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh-keygen -t ed25519 -C <span style="color:#f1fa8c">&#34;your_email@example.com&#34;</span>
+</code></pre></div><p>The flag <code>-t</code> specifies the type of key to generate, in this case <code>ed25519</code>. <code>-C</code> is used to add a comment to the key, which is typically an email address. <code>your_email@example.com</code> should be replaced with your actual email address. This command will prompt you to choose a location and a passphrase for your new key. By default, the key will be saved in the <code>.ssh</code> directory in your home folder with the filename <code>id_ed25519</code>.</p>
+<p>This command will create a private and a public key which are by default located under the hidden .ssh folder inside your $HOME directory.</p>
+<p>Next we will add our private key to the <code>ssh-agent</code> . We know the key is located in <code>~/.ssh/</code> and by default its called <code>id_ed25519</code> so we will add that to the agent using the <code>ssh-add</code> command.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-add ~/.ssh/id_ed25519
+</code></pre></div><p>Finally we will add our public key to our Github account.</p>
+<p>To add the key to our github account we will need to visit the <strong>Settings</strong> page. Click on your profile picture and select <strong>Settings</strong> Next under the <strong>Access</strong> menu click <strong>SSH and GPG keys</strong></p>
+<p>Click on the button that says <strong>New SSH Key</strong></p>
+<p>In the “Title” field add a descriptive label like for example “Work Laptop”.</p>
+<p>Under “Key type” select “Authentication Key”.</p>
+<p>In the “Key” field add the contents of your <strong>public</strong> key which is :  <code>~/.ssh/id_ed5519.pub</code></p>
+<p>When you are done click “Add SSH key” and we are done.</p>
+
+
+<h2 id="working-with-git" class="hoverMe">
+    Working with Git 
+    <a href="#working-with-git" class="text-decoration-none"> # </a>
+</h2>
+
+
+<h3 id="installing-git" class="hoverMe">
+    Installing git 
+    <a href="#installing-git" class="text-decoration-none"> # </a>
+</h3>
+<p>First we’ll need to install git on our machine.</p>
+<p>To install Git on Linux, open your terminal and use the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get update
+$ sudo apt-get install git
+</code></pre></div><p>This will update your package manager and then install Git on your machine.</p>
+<p>Once Git is installed, you can verify that it was installed correctly by running the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git --version
+</code></pre></div><p>This will display the version of Git that is currently installed on your machine.</p>
+<p>While the above instructions are specific to Ubuntu and other Debian based distributions, the process of installing Git on other Linux distributions is similar. However, the specific commands used to install Git may differ depending on the package manager used by your distribution.</p>
+<p>For example, if you&rsquo;re using Fedora, you can install Git using the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo dnf install git
+</code></pre></div><p>If you&rsquo;re using a distribution that uses a different package manager, consult your distribution&rsquo;s documentation for specific instructions on how to install Git.</p>
+
+
+<h2 id="general-github-workflow" class="hoverMe">
+    General Github Workflow 
+    <a href="#general-github-workflow" class="text-decoration-none"> # </a>
+</h2>
+<p>The github workflow involves several steps that utilize git commands to ensure that changes are properly managed and reviewed before they are merged into the main codebase. Here is a general overview of the process :</p>
+<ol>
+<li>Fork the repository: To work on a project hosted on GitHub, you can start by forking the repository to create a copy of it under your own GitHub account. This will allow you to make changes to the codebase without affecting the original repository.</li>
+<li>Clone the repository: Once you have forked the repository, you can clone it to your local machine using the <code>git clone</code> command. This will create a local copy of the repository that you can work on.</li>
+<li>Create a branch: Before making any changes to the codebase, it is recommended to create a new branch. This can be done using the <code>git branch</code> command. The branch should be named after the feature or bug that you will be working on.</li>
+<li>Make changes and commit them: Once you have created a branch, you can make changes to the codebase using a text editor or an integrated development environment (IDE). After making changes, you can use the <code>git add</code> command to stage the changes and the <code>git commit</code> command to commit them to the local repository.</li>
+<li>Push the changes to the forked repository: After committing the changes to the local repository, you can use the <code>git push</code> command to push the changes to the forked repository on GitHub.</li>
+<li>Create a pull request: Once the changes have been pushed to the forked repository, you can create a pull request (PR) on the original repository to request that the changes be merged. The PR should include a description of the changes and any relevant screenshots or documentation.</li>
+<li>Review and merge the changes: The PR will then be reviewed by the project maintainers or other contributors. They can leave comments or request changes to be made. Once the changes have been approved, they can be merged into the main codebase using the <code>git merge</code> command.</li>
+<li>Update the forked repository: After the changes have been merged into the main codebase, you should update your forked repository using the <code>git pull</code> command. This will ensure that your local repository is up-to-date with the latest changes.</li>
+<li>Delete the branch: Once the changes have been merged, the branch can be deleted using the <code>git branch -d</code> command.</li>
+</ol>
+<p>In this guide we won’t be forking any repository. Instead we will create our own and work from step 3 onward.</p>
+
+
+<h3 id="creating-a-new-repository" class="hoverMe">
+    Creating a new repository 
+    <a href="#creating-a-new-repository" class="text-decoration-none"> # </a>
+</h3>
+<p>On your home page at github click on the “New” button to setup a new repository.</p>
+<p>In our case since this is a mere example we will take github’s suggest of short and memorable repository name of “stunning-potato” and set it to be a Private repository. Click “Create Repository” after you’re done.</p>
+<p>Our repository is now created and is available at <code>[https://github.com/YOU/stunning-potato](https://github.com/YOU/stunning-potato)</code> . Now we can return to our terminal and interact with this remote repository using git.</p>
+
+
+<h3 id="working-towards-our-first-push" class="hoverMe">
+    Working towards our first push 
+    <a href="#working-towards-our-first-push" class="text-decoration-none"> # </a>
+</h3>
+<p>First, create a folder somewhere that will contain your project. Open a terminal and navigate to said folder.</p>
+<p>Inside we will create a simple <a href="http://readme.md">readme.md</a> markdown file for our codebase.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;#stunning-potato&#34;</span> &gt;&gt; README.md
+</code></pre></div><p>This command will simply create the README.md file and append at the end of its contents (which in our case is the beginning of the file since it is empty) the string “#stunning-potato” without the quote marks which in markdown translates to a header 1 which says “stunning-potato”. If you don’t know what i am talking about, you will see the results once we push our changes to the repository.</p>
+<p>Next we will initialize the repository using <code>git-init</code> .</p>
+<p>Now that we’ve initialized our local git repository, we need to add our new readme file to it using <code>git add</code> .</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add README.md
+</code></pre></div><p>After we’ve added the file we need to commit it to the repository and add a descriptive message that explains what we’ve done in a simple manner using the <code>git commit</code> command</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -m <span style="color:#f1fa8c">&#34;First commit, added a README file&#34;</span>
+</code></pre></div><p>The -m flag allows us to add a message to our commit and is recommended for every commit you do as it makes tracking changes to the codebase easier.</p>
+<p>Before we move on to pushing our changes let us do a couple of things. First let us determine the name of our main branch and then connect our local repository to its remote counterpart over at github.com</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -M main
+git remote add origin git@github.com:dark-side-droid/stunning-potato.git
+</code></pre></div><p><code>git branch</code> is the command for managing git branches. More about branches later on. -M is the flag that specifies that the branch should be renamed and “main” is the name we’ve appropriately chosen for our main branch.</p>
+<p>When using the <code>git remote add origin</code>  command take note that in this case dark-side-droid is my github username and correspondingly stunning-potato is the the name of my repository so you should replace them with your own.</p>
+<p>Now that we’ve set everything up we can finally push our changes to our remote repository.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push -u origin main
+</code></pre></div><p>Everything should work great, and we can now head over to github.com in our browser and see our changes reflected in our repository’s page. We should be able to see our README.md file, alongside its commit message and we should be able to see that we are currently on the main branch.</p>
+<p>To further investigate the github workflow lets add two more files in our local repository “file1.txt” and “file2.txt” and push them as well.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch file1.txt file2.txt
+</code></pre></div><p>Like we did before, we need to add them to the repository for the tracking of changes but this time we won’t type the <code>git add</code> command once for each file. This time around we will use <code>git add .</code> which adds every file in the current directory.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add .
+</code></pre></div><p>As usual commit the changes  and then push. This time we won’t need to tell git which origin we are working on since we’ve already done that.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -m <span style="color:#f1fa8c">&#34;added 2 text files&#34;</span>
+git push
+</code></pre></div><p>After successfully pushing our two text files should be in our remote repository.</p>
+
+
+<h3 id="revert" class="hoverMe">
+    Revert 
+    <a href="#revert" class="text-decoration-none"> # </a>
+</h3>
+<p>Suppose however that we’ve made a mistake and we’ve pushed the wrong files in the repository and we weren&rsquo;t supposed to do that. How do we correct our mistake ? Well github tracks every change we’ve made to the repository using the <code>git log</code> command followed by the <code>git revert</code> command. When we use the command we get the following output.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">commit 280ae2d7b89d361eac029ebccc91a06335b1e8c9 <span style="color:#ff79c6">(</span>HEAD -&gt; main, origin/main<span style="color:#ff79c6">)</span>
+Author: Andrew V &lt;emailhere&gt;
+Date:   Sun Apr <span style="color:#bd93f9">30</span> 11:11:42 <span style="color:#bd93f9">2023</span> +0300
+
+    added text files
+
+commit 5fb55c403ab4a545df669adc22222487482c827a
+Author: Andrew V &lt;emailhere&gt;
+Date:   Sun Apr <span style="color:#bd93f9">30</span> 10:58:57 <span style="color:#bd93f9">2023</span> +0300
+
+    First comit, added a README file
+</code></pre></div><p>We can see our two commits, who made them, the comments we added using the <code>-m</code> flag on our commit and so on. Since we have a problem with the commit which added the text files we can use the <code>git revert</code>  command to delete this change.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git revert 280ae2d7b89d361eac029ebccc91a06335b1e8c9
+git push
+</code></pre></div><p>That hash corresponds to the commit ID that we can read in the output above. We use git push to forward our changes to the remote repository. Of course if we want to revert the revert we can follow the same procedure of <code>git log</code> since the revert operation is included in the log as a commit.</p>
+<p>Great ! Lets move on to branches.</p>
+
+
+<h3 id="working-with-branches" class="hoverMe">
+    Working with branches 
+    <a href="#working-with-branches" class="text-decoration-none"> # </a>
+</h3>
+<p>Branches are an essential part of the github workflow. Whenever we have any changes to make to our codebase instead of altering it and possibly causing any damage we can instead create a new branch of our code and test our changes on that second branch. If our changes work as intended, we can then merge the two branches and introduce our changes to the main branch.</p>
+<p>To create a new branch use the <code>git branch</code> command followed by <code>git checkout</code> to change our current working branch. Usually when we create a new branch we name it according to the feature we are adding or the bugs we are working out and so on. In this example we will use the name “testing” for our new branch.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch testing
+git checkout testing
+</code></pre></div><p>Now that we are working on our new testing branch, let us add a new file and push the changes to our remote repository.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch file3.txt
+git add file3.txt
+git commit -m <span style="color:#f1fa8c">&#34;adding new file&#34;</span>
+git push -u origin testing
+</code></pre></div><p>All of the commands above should be recognizable by now. We create a new file, add it and commit the change with a message and push it to the testing repository. If we head over to our browser check our repository we should see our changes reflected on our repository including our second branch, and the new file which is present only on our “testing” branch.</p>
+<p>Let us suppose that our changes are exactly what we wanted and everything is working as intended. The next step is to switch back to the main branch and and merge it with “testing”.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout main
+git push
+</code></pre></div><p>Since we’re done with out testing branch let us now delete it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -D testing
+</code></pre></div><p>The <code>-D</code> flag deletes the branch even if it has not been merged. Alternatively you may use <code>-d</code>  as a safeguard which will only delete the branch if it has been merged. This command will only delete the new branch locally. If you want to delete it from the online repository as well use the following :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin --delete testing
+</code></pre></div><p>Additionally we can remove all branches that have been deleted locally with <code>git remote prune origin</code>.</p>
+
+
+<h3 id="git-pull" class="hoverMe">
+    Git Pull 
+    <a href="#git-pull" class="text-decoration-none"> # </a>
+</h3>
+<p>When we are collaborating with other people, it is a relatively common occurrence that someone updates the codebase while we are working on it. If we want to be working on the most recent version we may create a <code>git pull</code> request.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull origin main
+</code></pre></div><p>This command fetches and merges the changes from the remote repository with our own in one step. Alternatively</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git fetch origin
+git merge origin/main
+</code></pre></div><p>The fetch command will update your local repository’s knowledge of the remote’s history but it wont update anything yet. When we run the merge command it will merge the changes from the remote repository’s “main” branch into our local repository’s current branch.</p>
+
+
+<h2 id="conclusion" class="hoverMe">
+    Conclusion 
+    <a href="#conclusion" class="text-decoration-none"> # </a>
+</h2>
+<p>Thank you for reading this far. I hope you find this guide informative. If you’ve found any mistakes in my example or any issues or bad practices please let me know.</p>
+<p>Happy coding !</p>
+
+    </div>
+    <div class="">
+        
+        <p>---</p>
+       <div id="donate-button-container">
+            <div id="donate-button"></div>
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'JXV4HE8J74PJY',
+                image: {
+                src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                alt:'Donate with PayPal button',
+                title:'PayPal - The safer, easier way to pay online!',
+                }
+                }).render('#donate-button');
+                </script>
+            </div>
+
+        <p class="text-muted mt-2">If you found this post useful you may donate a small amount to support my effort in creating more content like this.</p>
+            
+        
+    </div>
+</div>
+
+
+
+    
+     <footer class="py-3 mt-5 container border-top">
+    
+    <div class="d-flex flex-row justify-content-center fs-4 pt-3">
+        <a href="https://www.github.com/dark-side-droid" title="Visit my Github" class="text-black" target="_blank"><i class="bi bi-github pe-4"></i></a>
+        <a href="https://t.me/+cH3f1gJUqCY2NTI0" title="Stay updated on Telegram" class="text-black" target="_blank"><i class="bi bi-telegram pe-4"></i></a>
+        <a href="/index.xml" title="View the RSS sitemap" class="text-black" target="_blank"><i class="bi bi-rss-fill "></i></a>
+    </div>
+    <p class="text-center pt-4"> &copy; 2023 Andrew V | All rights reserved</p>
+</footer>
+
+    
+</body>
+
+</html>
