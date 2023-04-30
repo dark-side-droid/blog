@@ -3,8 +3,9 @@
     src: url('Fake Serif.ttf');
 }
 
+
 * {
-    font-family: Helvetica, Arial !important;
+    font-family:Helvetica, Arial, sans-serif !important;
 }
 
 
