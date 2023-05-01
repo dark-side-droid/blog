@@ -174,7 +174,7 @@ $ sudo apt-get install git
 </h3>
 <p>On your home page at github click on the “New” button to setup a new repository.</p>
 <p>In our case since this is a mere example we will take github’s suggest of short and memorable repository name of “stunning-potato” and set it to be a Private repository. Click “Create Repository” after you’re done.</p>
-<p>Our repository is now created and is available at <a href="https://github.com/YOU/stunning-potato">https://github.com/YOU/stunning-potato</a> . Now we can return to our terminal and interact with this remote repository using git.</p>
+<p>Our repository is now created and is available at <code>https://github.com/YOU/stunning-potato</code> . Now we can return to our terminal and interact with this remote repository using git.</p>
 
 
 <h3 id="working-towards-our-first-push" class="hoverMe">
@@ -182,7 +182,7 @@ $ sudo apt-get install git
     <a href="#working-towards-our-first-push" class="text-decoration-none"> # </a>
 </h3>
 <p>First, create a folder somewhere that will contain your project. Open a terminal and navigate to said folder.</p>
-<p>Inside we will create a simple <a href="http://readme.md">readme.md</a> markdown file for our codebase.</p>
+<p>Inside we will create a simple <code>README.md</code> markdown file for our codebase.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;#stunning-potato&#34;</span> &gt;&gt; README.md
 </code></pre></div><p>This command will simply create the README.md file and append at the end of its contents (which in our case is the beginning of the file since it is empty) the string “#stunning-potato” without the quote marks which in markdown translates to a header 1 which says “stunning-potato”. If you don’t know what i am talking about, you will see the results once we push our changes to the repository.</p>
 <p>Next we will initialize the repository using <code>git-init</code> .</p>
