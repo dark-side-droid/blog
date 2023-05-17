@@ -78,14 +78,29 @@ img {
     font-family: cursive;
 }
 
+.hoverMe{
 
+	padding-top:15px;
+}
+
+.hoverMe:hover{
+	color:black;
+	transition: color, 0.13s;
+}
 .hoverMe>a {
     display: none;
+    margin-bottom:10px;
+    color:black;
+    font-size:0.6em;
 }
 
 .hoverMe:hover>a {
     display: inline !important;
 
+}
+
+.hoverMe:hover{
+	color:deepskyblue;
 }
 
 ;
