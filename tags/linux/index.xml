@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved</copyright>
-    <lastBuildDate>Sun, 30 Apr 2023 16:30:54 +0300</lastBuildDate><atom:link href="https://blog.andrew-v.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 May 2023 20:20:18 +0300</lastBuildDate><atom:link href="https://blog.andrew-v.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Node Version Manager</title>
+      <link>https://blog.andrew-v.com/posts/installing-nvm/</link>
+      <pubDate>Thu, 18 May 2023 20:20:18 +0300</pubDate>
+      
+      <guid>https://blog.andrew-v.com/posts/installing-nvm/</guid>
+      <description>Installing NVM on Linux and managing different Node versions</description>
+    </item>
+    
     <item>
       <title>Introduction to Github CLI on Linux</title>
       <link>https://blog.andrew-v.com/posts/intro-to-github-cli/</link>
