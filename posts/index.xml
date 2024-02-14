@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved</copyright>
-    <lastBuildDate>Tue, 20 Jun 2023 08:18:54 +0300</lastBuildDate><atom:link href="https://blog.andrew-v.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Feb 2024 13:56:41 +0200</lastBuildDate><atom:link href="https://blog.andrew-v.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Essential APT Commands: A Quick Reference </title>
+      <link>https://blog.andrew-v.com/posts/apt-basics/</link>
+      <pubDate>Wed, 14 Feb 2024 13:56:41 +0200</pubDate>
+      
+      <guid>https://blog.andrew-v.com/posts/apt-basics/</guid>
+      <description>Looking for a handy reference guide to navigate APT commands efficiently? This article provides an overview of essential APT commands, enabling you to install, update, remove, and troubleshoot software packages on your Linux system.</description>
+    </item>
+    
     <item>
       <title>Environment variables in Linux</title>
       <link>https://blog.andrew-v.com/posts/environment-variables-debian/</link>
