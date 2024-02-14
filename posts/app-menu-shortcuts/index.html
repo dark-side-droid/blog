@@ -9,8 +9,7 @@
     <meta property="og:title" content="How to Create Custom Application Menu Shortcuts in Linux" />
 <meta property="og:description" content="Follow this guide to create your own application menu shortcuts" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.andrew-v.com/posts/app-menu-shortcuts/" />
-<meta property="og:image" content="https://blog.andrew-v.com/shortcut.jpg" />
+<meta property="og:url" content="https://blog.andrew-v.com/posts/app-menu-shortcuts/" /><meta property="og:image" content="https://blog.andrew-v.com/shortcut.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-08T19:07:10+02:00" />
 <meta property="article:modified_time" content="2023-03-08T19:07:10+02:00" />
 
@@ -29,7 +28,7 @@
 </head>
 <body class="container">
     <div class="d-flex flex-column justify-content-center d-lg-flex flex-lg-row justify-content-lg-between py-4 align-items-center d-sm-flex flex-sm-column justify-content-sm-center my-4 pb-3 mb-4 border-bottom">
-    <a href="https://paizo.com/community/blog/v5748dyo6si7y?The-ORC-Alliance-Grows" class="text-decoration-none text-black" target="_blank"><p class="d-none d-lg-inline pt-3">The time of the ORC has come</p></a>
+    <a href="#" class="text-decoration-none text-black" target=""><p class="d-none d-lg-inline pt-3">Art, Programming, Linux</p></a>
     <a href="/" class="text-decoration-none"> <h1 class="display-4 brand">Andrew&#39;s notes</h1></a>
     <div class="d-flex flex-row justify-content-lg-between mt-4 mt-lg-1">
         <a href="/" class="nav-link text-dark pe-4" aria-current="page">Home</a>
@@ -72,15 +71,15 @@
         <p>Application menu shortcuts in Linux provide an easy way to quickly access your favorite applications. Instead of having to navigate to the application through the file manager or terminal, you can simply click on the shortcut in the application menu. This can save a lot of time and make your workflow more efficient. Creating a custom application menu shortcut is also a great way to make your favorite applications more easily accessible. In this guide, we will walk you through the steps to create a new application menu shortcut in Linux.</p>
 <p>To create a new shortcut in Linux, you need to create an <code>.desktop</code> file and place it inside the <code>/usr/share/applications/</code> directory. The <code>.desktop</code> file is essentially a configuration file that contains information about the application, such as its name, icon, and command used to launch it.</p>
 <p>Here is an example of a <code>.desktop</code> file i made for personal use, for the digital painting program <a href="https://krita.org/en/">Krita</a>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Desktop Entry]
-Name=Krita
-GenericName=Digital Painting and Image Processing
-Comment=Go ahead and paint!
-Exec=/opt/Krita/krita-5.1.5.appimage
-Terminal=false
-Type=Application
-Icon=krita
-</code></pre></div><p>In the example above, the <code>Name</code> field refers to the name of the application as it will appear in the menu, the <code>Exec</code> field specifies the command used to launch the application which in my case is simply the path to the executable, and the <code>Icon</code> field refers to the icon file used for the application.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[Desktop Entry]
+</span></span><span style="display:flex;"><span>Name=Krita
+</span></span><span style="display:flex;"><span>GenericName=Digital Painting and Image Processing
+</span></span><span style="display:flex;"><span>Comment=Go ahead and paint!
+</span></span><span style="display:flex;"><span>Exec=/opt/Krita/krita-5.1.5.appimage
+</span></span><span style="display:flex;"><span>Terminal=false
+</span></span><span style="display:flex;"><span>Type=Application
+</span></span><span style="display:flex;"><span>Icon=krita
+</span></span></code></pre></div><p>In the example above, the <code>Name</code> field refers to the name of the application as it will appear in the menu, the <code>Exec</code> field specifies the command used to launch the application which in my case is simply the path to the executable, and the <code>Icon</code> field refers to the icon file used for the application.</p>
 <p>Once you have created the <code>.desktop</code> file and placed it inside the correct directory, you should be able to see the new shortcut in your application menu. If the shortcut does not appear right away, you may need to log out and log back in to see the changes.</p>
 <p>If you would like to learn more about what you can do with application shortcuts in linux and what other parameters you may set, go ahead and open up the .desktop file of your favorite applications and take a look inside. In this example we used a very simple and minimal .desktop file but for a real world shortcut you will need to set a lot of parameters for things like different languages et cetera.</p>
 
@@ -120,7 +119,7 @@ Icon=krita
         <a href="https://t.me/+cH3f1gJUqCY2NTI0" title="Stay updated on Telegram" class="text-black" target="_blank"><i class="bi bi-telegram pe-4"></i></a>
         <a href="/index.xml" title="View the RSS sitemap" class="text-black" target="_blank"><i class="bi bi-rss-fill "></i></a>
     </div>
-    <p class="text-center pt-4"> &copy; 2023 Andrew V | All rights reserved</p>
+    <p class="text-center pt-4"> &copy; 2024 Andrew V | All rights reserved</p>
 </footer>
 
     

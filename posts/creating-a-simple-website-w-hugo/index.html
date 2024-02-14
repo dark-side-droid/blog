@@ -9,8 +9,7 @@
     <meta property="og:title" content="Creating a simple blog with Hugo" />
 <meta property="og:description" content="How to instal Hugo, create a simple blog and deploy to Github Pages" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.andrew-v.com/posts/creating-a-simple-website-w-hugo/" />
-<meta property="og:image" content="https://blog.andrew-v.com/images/hugo-logo.jpg" />
+<meta property="og:url" content="https://blog.andrew-v.com/posts/creating-a-simple-website-w-hugo/" /><meta property="og:image" content="https://blog.andrew-v.com/images/hugo-logo.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-12-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-12-18T00:00:00+00:00" />
 
@@ -29,7 +28,7 @@
 </head>
 <body class="container">
     <div class="d-flex flex-column justify-content-center d-lg-flex flex-lg-row justify-content-lg-between py-4 align-items-center d-sm-flex flex-sm-column justify-content-sm-center my-4 pb-3 mb-4 border-bottom">
-    <a href="https://paizo.com/community/blog/v5748dyo6si7y?The-ORC-Alliance-Grows" class="text-decoration-none text-black" target="_blank"><p class="d-none d-lg-inline pt-3">The time of the ORC has come</p></a>
+    <a href="#" class="text-decoration-none text-black" target=""><p class="d-none d-lg-inline pt-3">Art, Programming, Linux</p></a>
     <a href="/" class="text-decoration-none"> <h1 class="display-4 brand">Andrew&#39;s notes</h1></a>
     <div class="d-flex flex-row justify-content-lg-between mt-4 mt-lg-1">
         <a href="/" class="nav-link text-dark pe-4" aria-current="page">Home</a>
@@ -114,18 +113,18 @@ Enter Hugo. A blazingly fast SSG or static site generator that generates web pag
     Installing on Linux 
     <a href="#installing-on-linux" class="text-decoration-none"> # </a>
 </h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># Ubuntu/Debian
-sudo apt install hugo
-
-# Arch
-sudo pacman -Syu hugo
-
-# Fedora
-sudo dnf install hugo
-
-# Homebrew
-brew install hugo
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Ubuntu/Debian
+</span></span><span style="display:flex;"><span>sudo apt install hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Arch
+</span></span><span style="display:flex;"><span>sudo pacman -Syu hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Fedora
+</span></span><span style="display:flex;"><span>sudo dnf install hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Homebrew
+</span></span><span style="display:flex;"><span>brew install hugo
+</span></span></code></pre></div>
 
 <h3 id="installing-on-windows" class="hoverMe">
     Installing on Windows 
@@ -133,9 +132,9 @@ brew install hugo
 </h3>
 <p>Installing hugo on windows is a little bit more difficult than installing on linux, involving just a few more steps. To begin, we will need to download the Windows-64bit current release from github. <a href="https://github.com/gohugoio/hugo/releases/tag/v0.102.1">Link</a>.</p>
 <p>After we&rsquo;ve selected and downloaded the appropriate relase from github, we will need to create some folders and then extract there the contents of the zip file that we downloaded. The path we will need to create is this :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:\Hugo\bin
-</code></pre></div><p>To test if its working open a command prompt in this folder and type <code>hugo version</code>. It should reply with the version of hugo that we&rsquo;ve downloaded which means its working properly. Next we need to create an environment variable for hugo.</p>
-<p>To create an environment variable type &lsquo;edit the system environment variables&rsquo; in windows search of the start menu and select it. On the buttom &lsquo;Advanced&rsquo; tab, click the &lsquo;Environment Variables&rsquo; button. A new window should pop up with two tables. On the first table which is the user variables for your user click on the &lsquo;Path&rsquo; variable and select &lsquo;Edit&rsquo;. A new window should pop up once more which displays all the environment variables for our user. Select &lsquo;New&rsquo; and type
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>C:\Hugo\bin
+</span></span></code></pre></div><p>To test if its working open a command prompt in this folder and type <code>hugo version</code>. It should reply with the version of hugo that we&rsquo;ve downloaded which means its working properly. Next we need to create an environment variable for hugo.</p>
+<p>To create an environment variable type &rsquo;edit the system environment variables&rsquo; in windows search of the start menu and select it. On the buttom &lsquo;Advanced&rsquo; tab, click the &lsquo;Environment Variables&rsquo; button. A new window should pop up with two tables. On the first table which is the user variables for your user click on the &lsquo;Path&rsquo; variable and select &lsquo;Edit&rsquo;. A new window should pop up once more which displays all the environment variables for our user. Select &lsquo;New&rsquo; and type
 <code>C:\Hugo\bin</code> and enter. Click OK on each window to close them.</p>
 <p>Now that we have an environment variable for hugo we should be able to open a command prompt and access hugo from anywhere. Type <code>hugo version</code> to test it out. It should work like before when we tested from the C:\Hugo<br>
 bin folder.</p>
@@ -146,18 +145,18 @@ bin folder.</p>
     <a href="#creating-a-new-hugo-site" class="text-decoration-none"> # </a>
 </h2>
 <p>Creating a new site with hugo is easy. Simply go inside a folder where you want the new site to be located, open a terminal there and type</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hugo new site site-name-here
-</code></pre></div><p>A new folder will be created with the contents of your new site. Congratulations, the skeleton of your new site is ready. The folder structure should look like this :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">.
-├── archetypes
-│   └── default.md
-├── config.toml
-├── content
-├── data
-├── layouts
-├── static
-└── themes
-</code></pre></div><p>We won’t go deep on explaining how hugo works here. We just need to know that our posts will go into the Content folder and that the basic configuration of our site is stored at <code>config.toml</code> file. For this project we will touch explore a bit of both.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>hugo new site site-name-here
+</span></span></code></pre></div><p>A new folder will be created with the contents of your new site. Congratulations, the skeleton of your new site is ready. The folder structure should look like this :</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── archetypes
+</span></span><span style="display:flex;"><span>│   └── default.md
+</span></span><span style="display:flex;"><span>├── config.toml
+</span></span><span style="display:flex;"><span>├── content
+</span></span><span style="display:flex;"><span>├── data
+</span></span><span style="display:flex;"><span>├── layouts
+</span></span><span style="display:flex;"><span>├── static
+</span></span><span style="display:flex;"><span>└── themes
+</span></span></code></pre></div><p>We won’t go deep on explaining how hugo works here. We just need to know that our posts will go into the Content folder and that the basic configuration of our site is stored at <code>config.toml</code> file. For this project we will touch explore a bit of both.</p>
 <p>According to hugo documentation the configuration file could be a tolm, yml or json file. Hugo can recognize and work with any of them, and when you add a theme later, the sample config file for the theme could be in any of those 3 files. Just remember to keep an eye on it.</p>
 
 
@@ -169,141 +168,141 @@ bin folder.</p>
 <p>Once we find a theme we like and download it, create a folder inside the <code>themes</code> directory and extract the contects of the theme downloaded from github inside.</p>
 <p>For this tutorial we will download the <strong>papermod</strong> theme so go ahead and clone the directory from github.</p>
 <p>To enable the theme we need to edit our <code>config.toml</code> file and copy and paste the following.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">baseURL = &#34;https://examplesite.com/&#34;
-title = &#34;ExampleSite&#34;
-paginate = 5
-theme = &#34;hugo-PaperMod&#34;
-enableRobotsTXT = true
-buildDrafts = false
-buildFuture = false
-buildExpired = false
-googleAnalytics = &#34;UA-123-45&#34;
-pygmentsUseClasses = true
-
-[minify]
-	disableXML = true
-	minifyOutput = true
-
-[params]
-	env = &#34;production&#34;
-	title = &#34;ExampleSite&#34;
-	description = &#34;ExampleSite description&#34;
-	keywords = [ &#34;Blog&#34;, &#34;Portfolio&#34;, &#34;PaperMod&#34; ]
-	author = &#34;Me&#34;
-	images = [ &#34;&lt;link or path of image for opengraph, twitter-cards&gt;&#34; ]
-	DateFormat = &#34;January 2, 2006&#34;
-	defaultTheme = &#34;light&#34;
-	disableThemeToggle = false
-	ShowReadingTime = true
-	ShowShareButtons = true
-	ShowPostNavLinks = true
-	ShowBreadCrumbs = true
-	ShowCodeCopyButtons = true
-	ShowWordCount = true
-	ShowRssButtonInSectionTermList = true
-	UseHugoToc = true
-	disableSpecial1stPost = false
-	disableScrollToTop = false
-	comments = false
-	hidemeta = false
-	hideSummary = false
-	showtoc = false
-	tocopen = false
-
-  [params.assets]
-	  favicon = &#34;&lt;link / abs url&gt;&#34;
-	  favicon16x16 = &#34;&lt;link / abs url&gt;&#34;
-	  favicon32x32 = &#34;&lt;link / abs url&gt;&#34;
-	  apple_touch_icon = &#34;&lt;link / abs url&gt;&#34;
-	  safari_pinned_tab = &#34;&lt;link / abs url&gt;&#34;
-
-  [params.label]
-	  text = &#34;Home&#34;
-	  icon = &#34;/apple-touch-icon.png&#34;
-	  iconHeight = 35
-
-  [params.profileMode]
-	  enabled = false
-	  title = &#34;ExampleSite&#34;
-	  subtitle = &#34;This is subtitle&#34;
-	  imageUrl = &#34;&lt;img location&gt;&#34;
-	  imageWidth = 120
-	  imageHeight = 120
-	  imageTitle = &#34;my image&#34;
-
-    [[params.profileMode.buttons]]
-	    name = &#34;Posts&#34;
-	    url = &#34;posts&#34;
-
-    [[params.profileMode.buttons]]
-	    name = &#34;Tags&#34;
-	    url = &#34;tags&#34;
-
-  [params.homeInfoParams]
-	  Title = &#34;Hi there 👋&#34;
-	  Content = &#34;Welcome to my blog&#34;
-
-  [[params.socialIcons]]
-	  name = &#34;twitter&#34;
-	  url = &#34;https://twitter.com/&#34;
-
-  [[params.socialIcons]]
-	  name = &#34;stackoverflow&#34;
-	  url = &#34;https://stackoverflow.com&#34;
-
-  [[params.socialIcons]]
-	  name = &#34;github&#34;
-	  url = &#34;https://github.com/&#34;
-
-[params.analytics.google]
-	SiteVerificationTag = &#34;XYZabc&#34;
-
-[params.analytics.bing]
-	SiteVerificationTag = &#34;XYZabc&#34;
-
-[params.analytics.yandex]
-	SiteVerificationTag = &#34;XYZabc&#34;
-
-  [params.cover]
-	  hidden = true
-	  hiddenInList = true
-	  hiddenInSingle = true
-
-  [params.editPost]
-	  URL = &#34;https://github.com/&lt;path_to_repo&gt;/content&#34;
-	  Text = &#34;Suggest Changes&#34;
-	  appendFilePath = true
-
-  [params.fuseOpts]
-	  isCaseSensitive = false
-	  shouldSort = true
-	  location = 0
-	  distance = 1_000
-	  threshold = 0.4
-	  minMatchCharLength = 0
-	  keys = [ &#34;title&#34;, &#34;permalink&#34;, &#34;summary&#34;, &#34;content&#34; ]
-
-
-[[menu.main]]
-	identifier = &#34;tags&#34;
-	name = &#34;tags&#34;
-	url = &#34;/tags/&#34;
-	weight = 20
-
-[[menu.main]]
-	identifier = &#34;posts&#34;
-	name = &#34;posts&#34;
-	url = &#34;/posts/&#34;
-	weight = 10
-
-[markup.highlight]
-	noClasses = false
-</code></pre></div><p>This might look a little complicated but after spending a couple of hours working with hugo and its documentation it will all seem fairly straightforward. The contents of the above file were taken from the example posted in the documentation of the papermod at github, and were altered just a bit to fit the contents of this tutorial.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>baseURL = &#34;https://examplesite.com/&#34;
+</span></span><span style="display:flex;"><span>title = &#34;ExampleSite&#34;
+</span></span><span style="display:flex;"><span>paginate = 5
+</span></span><span style="display:flex;"><span>theme = &#34;hugo-PaperMod&#34;
+</span></span><span style="display:flex;"><span>enableRobotsTXT = true
+</span></span><span style="display:flex;"><span>buildDrafts = false
+</span></span><span style="display:flex;"><span>buildFuture = false
+</span></span><span style="display:flex;"><span>buildExpired = false
+</span></span><span style="display:flex;"><span>googleAnalytics = &#34;UA-123-45&#34;
+</span></span><span style="display:flex;"><span>pygmentsUseClasses = true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[minify]
+</span></span><span style="display:flex;"><span>	disableXML = true
+</span></span><span style="display:flex;"><span>	minifyOutput = true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[params]
+</span></span><span style="display:flex;"><span>	env = &#34;production&#34;
+</span></span><span style="display:flex;"><span>	title = &#34;ExampleSite&#34;
+</span></span><span style="display:flex;"><span>	description = &#34;ExampleSite description&#34;
+</span></span><span style="display:flex;"><span>	keywords = [ &#34;Blog&#34;, &#34;Portfolio&#34;, &#34;PaperMod&#34; ]
+</span></span><span style="display:flex;"><span>	author = &#34;Me&#34;
+</span></span><span style="display:flex;"><span>	images = [ &#34;&lt;link or path of image for opengraph, twitter-cards&gt;&#34; ]
+</span></span><span style="display:flex;"><span>	DateFormat = &#34;January 2, 2006&#34;
+</span></span><span style="display:flex;"><span>	defaultTheme = &#34;light&#34;
+</span></span><span style="display:flex;"><span>	disableThemeToggle = false
+</span></span><span style="display:flex;"><span>	ShowReadingTime = true
+</span></span><span style="display:flex;"><span>	ShowShareButtons = true
+</span></span><span style="display:flex;"><span>	ShowPostNavLinks = true
+</span></span><span style="display:flex;"><span>	ShowBreadCrumbs = true
+</span></span><span style="display:flex;"><span>	ShowCodeCopyButtons = true
+</span></span><span style="display:flex;"><span>	ShowWordCount = true
+</span></span><span style="display:flex;"><span>	ShowRssButtonInSectionTermList = true
+</span></span><span style="display:flex;"><span>	UseHugoToc = true
+</span></span><span style="display:flex;"><span>	disableSpecial1stPost = false
+</span></span><span style="display:flex;"><span>	disableScrollToTop = false
+</span></span><span style="display:flex;"><span>	comments = false
+</span></span><span style="display:flex;"><span>	hidemeta = false
+</span></span><span style="display:flex;"><span>	hideSummary = false
+</span></span><span style="display:flex;"><span>	showtoc = false
+</span></span><span style="display:flex;"><span>	tocopen = false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [params.assets]
+</span></span><span style="display:flex;"><span>	  favicon = &#34;&lt;link / abs url&gt;&#34;
+</span></span><span style="display:flex;"><span>	  favicon16x16 = &#34;&lt;link / abs url&gt;&#34;
+</span></span><span style="display:flex;"><span>	  favicon32x32 = &#34;&lt;link / abs url&gt;&#34;
+</span></span><span style="display:flex;"><span>	  apple_touch_icon = &#34;&lt;link / abs url&gt;&#34;
+</span></span><span style="display:flex;"><span>	  safari_pinned_tab = &#34;&lt;link / abs url&gt;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [params.label]
+</span></span><span style="display:flex;"><span>	  text = &#34;Home&#34;
+</span></span><span style="display:flex;"><span>	  icon = &#34;/apple-touch-icon.png&#34;
+</span></span><span style="display:flex;"><span>	  iconHeight = 35
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [params.profileMode]
+</span></span><span style="display:flex;"><span>	  enabled = false
+</span></span><span style="display:flex;"><span>	  title = &#34;ExampleSite&#34;
+</span></span><span style="display:flex;"><span>	  subtitle = &#34;This is subtitle&#34;
+</span></span><span style="display:flex;"><span>	  imageUrl = &#34;&lt;img location&gt;&#34;
+</span></span><span style="display:flex;"><span>	  imageWidth = 120
+</span></span><span style="display:flex;"><span>	  imageHeight = 120
+</span></span><span style="display:flex;"><span>	  imageTitle = &#34;my image&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    [[params.profileMode.buttons]]
+</span></span><span style="display:flex;"><span>	    name = &#34;Posts&#34;
+</span></span><span style="display:flex;"><span>	    url = &#34;posts&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    [[params.profileMode.buttons]]
+</span></span><span style="display:flex;"><span>	    name = &#34;Tags&#34;
+</span></span><span style="display:flex;"><span>	    url = &#34;tags&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [params.homeInfoParams]
+</span></span><span style="display:flex;"><span>	  Title = &#34;Hi there 👋&#34;
+</span></span><span style="display:flex;"><span>	  Content = &#34;Welcome to my blog&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [[params.socialIcons]]
+</span></span><span style="display:flex;"><span>	  name = &#34;twitter&#34;
+</span></span><span style="display:flex;"><span>	  url = &#34;https://twitter.com/&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [[params.socialIcons]]
+</span></span><span style="display:flex;"><span>	  name = &#34;stackoverflow&#34;
+</span></span><span style="display:flex;"><span>	  url = &#34;https://stackoverflow.com&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [[params.socialIcons]]
+</span></span><span style="display:flex;"><span>	  name = &#34;github&#34;
+</span></span><span style="display:flex;"><span>	  url = &#34;https://github.com/&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[params.analytics.google]
+</span></span><span style="display:flex;"><span>	SiteVerificationTag = &#34;XYZabc&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[params.analytics.bing]
+</span></span><span style="display:flex;"><span>	SiteVerificationTag = &#34;XYZabc&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[params.analytics.yandex]
+</span></span><span style="display:flex;"><span>	SiteVerificationTag = &#34;XYZabc&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [params.cover]
+</span></span><span style="display:flex;"><span>	  hidden = true
+</span></span><span style="display:flex;"><span>	  hiddenInList = true
+</span></span><span style="display:flex;"><span>	  hiddenInSingle = true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [params.editPost]
+</span></span><span style="display:flex;"><span>	  URL = &#34;https://github.com/&lt;path_to_repo&gt;/content&#34;
+</span></span><span style="display:flex;"><span>	  Text = &#34;Suggest Changes&#34;
+</span></span><span style="display:flex;"><span>	  appendFilePath = true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [params.fuseOpts]
+</span></span><span style="display:flex;"><span>	  isCaseSensitive = false
+</span></span><span style="display:flex;"><span>	  shouldSort = true
+</span></span><span style="display:flex;"><span>	  location = 0
+</span></span><span style="display:flex;"><span>	  distance = 1_000
+</span></span><span style="display:flex;"><span>	  threshold = 0.4
+</span></span><span style="display:flex;"><span>	  minMatchCharLength = 0
+</span></span><span style="display:flex;"><span>	  keys = [ &#34;title&#34;, &#34;permalink&#34;, &#34;summary&#34;, &#34;content&#34; ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[[menu.main]]
+</span></span><span style="display:flex;"><span>	identifier = &#34;tags&#34;
+</span></span><span style="display:flex;"><span>	name = &#34;tags&#34;
+</span></span><span style="display:flex;"><span>	url = &#34;/tags/&#34;
+</span></span><span style="display:flex;"><span>	weight = 20
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[[menu.main]]
+</span></span><span style="display:flex;"><span>	identifier = &#34;posts&#34;
+</span></span><span style="display:flex;"><span>	name = &#34;posts&#34;
+</span></span><span style="display:flex;"><span>	url = &#34;/posts/&#34;
+</span></span><span style="display:flex;"><span>	weight = 10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[markup.highlight]
+</span></span><span style="display:flex;"><span>	noClasses = false
+</span></span></code></pre></div><p>This might look a little complicated but after spending a couple of hours working with hugo and its documentation it will all seem fairly straightforward. The contents of the above file were taken from the example posted in the documentation of the papermod at github, and were altered just a bit to fit the contents of this tutorial.</p>
 <p>For now just take notice that the baseURL parameter at the top of the page matters and if you’re planning to publish a blog with your own purchased domain name you should use that. Alternatively set it to <code>&quot;/&quot;</code>.</p>
 <p>To set the theme all you need to do is set <code>theme = hugo-PaperMod</code> or the name of whatever theme you are using which we have already done in the settings we can see above. The name is case sensitive and it must match exactly the name of the folder inside the themes directory.</p>
 <p>To check how our website looks we can temporarily start the hugo server</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hugo server -D
-</code></pre></div><p>Our site should now be deployed locally. Following our console&rsquo;s instructions we can connect to it on our browser through <code>localhost:1313</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>hugo server -D
+</span></span></code></pre></div><p>Our site should now be deployed locally. Following our console&rsquo;s instructions we can connect to it on our browser through <code>localhost:1313</code>.</p>
 <p>Most hugo themes have a lot of parameters that can be set in our configuration file that allow for customization. We won’t go over them in this tutorial but be sure to check out your theme’s documentation for a list of parameters that can be set in order to alter its appearence or function.</p>
 <p><code>CTRL-C</code> on the terminal to stop the hugo server once we’re done inspecting our new site.</p>
 
@@ -313,41 +312,39 @@ pygmentsUseClasses = true
     <a href="#creating-our-first-blog-post-with-markdown" class="text-decoration-none"> # </a>
 </h2>
 <p>To create a new post in our blog we type the following command</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hugo new posts/my-first-post.md
-</code></pre></div><p>New posts are located inside the content folder. Once we locate our my-first-post.md file and open it we can see that hugo has went ahead and added some information inside our file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">---
-title: &#34;My First Post&#34;
-date: 2022-08-31T01:44:39+03:00
-draft: true
----
-</code></pre></div><p>These parameters are mostly self-explanatory. The title is the title of our post, the date corresponds to the date and time that the post was created by hugo, and the draft if set to true means that the post is still on a draft state, so don’t publish it once you build the website.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>hugo new posts/my-first-post.md
+</span></span></code></pre></div><p>New posts are located inside the content folder. Once we locate our my-first-post.md file and open it we can see that hugo has went ahead and added some information inside our file.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;My First Post&#34;
+</span></span><span style="display:flex;"><span>date: 2022-08-31T01:44:39+03:00
+</span></span><span style="display:flex;"><span>draft: true
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>These parameters are mostly self-explanatory. The title is the title of our post, the date corresponds to the date and time that the post was created by hugo, and the draft if set to true means that the post is still on a draft state, so don’t publish it once you build the website.</p>
 <p>Go ahead and add any markdown content you wish inside the file, save it and exit. Our first post file looks like this</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">---
-title: &#34;my-first-post&#34;
-date: 2022-08-31T01:44:39+03:00
-draft: false
-summary : A hello world post
-tags : [&#34;HUGO&#34;, &#34;Hello&#34;]
-author: &#34;Andrew V&#34;
-cover:
-    image: &#34;hello.png&#34;
-    hidden: false
----
-
-# Hello world
-
-I would like to say hello.
-</code></pre></div><p>In our file we have added a summary, tags, author name and a cover image. The summary is a short description of the post for the list view, tags are set so that the readers of the blog can find all posts with similar tags and the cver image of the post is just an image that is displayed at the top of the post. This image and other assets such as javascript files or css scripts must be placed into the <code>static</code> folder. For this tutorial i have downloaded an image from google images.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;my-first-post&#34;
+</span></span><span style="display:flex;"><span>date: 2022-08-31T01:44:39+03:00
+</span></span><span style="display:flex;"><span>draft: false
+</span></span><span style="display:flex;"><span>summary : A hello world post
+</span></span><span style="display:flex;"><span>tags : [&#34;HUGO&#34;, &#34;Hello&#34;]
+</span></span><span style="display:flex;"><span>author: &#34;Andrew V&#34;
+</span></span><span style="display:flex;"><span>cover:
+</span></span><span style="display:flex;"><span>    image: &#34;hello.png&#34;
+</span></span><span style="display:flex;"><span>    hidden: false
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Hello world
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>I would like to say hello.
+</span></span></code></pre></div><p>In our file we have added a summary, tags, author name and a cover image. The summary is a short description of the post for the list view, tags are set so that the readers of the blog can find all posts with similar tags and the cver image of the post is just an image that is displayed at the top of the post. This image and other assets such as javascript files or css scripts must be placed into the <code>static</code> folder. For this tutorial i have downloaded an image from google images.</p>
 <p>To see our site once again, with our post included we simply start the server once more using the same <code>hugo server -D</code> command. Notice the -D flag, it stands for draft. When we start our server with the D flag it tells the hugo server that it needs to display even the posts that have the draft parameter set to true. If we do not set this flag, we won’t be able to see any posts like that.</p>
 <p>After we start the server can clearly see that our site includes our post and its content, and it is ready to be built and subsequently deployed.</p>
 <p>This is how our page looks</p>
-<figure>
-    <img src="/images/hugo-screenshot-1.jpg"/> 
+<figure><img src="/images/hugo-screenshot-1.jpg"/>
 </figure>
 
 <p>This is how our first post looks</p>
-<figure>
-    <img src="/images/hugo-screenshot-2.png"/> 
+<figure><img src="/images/hugo-screenshot-2.png"/>
 </figure>
 
 
@@ -409,7 +406,7 @@ I would like to say hello.
         <a href="https://t.me/+cH3f1gJUqCY2NTI0" title="Stay updated on Telegram" class="text-black" target="_blank"><i class="bi bi-telegram pe-4"></i></a>
         <a href="/index.xml" title="View the RSS sitemap" class="text-black" target="_blank"><i class="bi bi-rss-fill "></i></a>
     </div>
-    <p class="text-center pt-4"> &copy; 2023 Andrew V | All rights reserved</p>
+    <p class="text-center pt-4"> &copy; 2024 Andrew V | All rights reserved</p>
 </footer>
 
     

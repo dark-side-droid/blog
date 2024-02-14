@@ -9,8 +9,7 @@
     <meta property="og:title" content="Imprecision and Overflow" />
 <meta property="og:description" content="We are working with the fundamental limitation of computing with a finite number of bits" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.andrew-v.com/posts/floating-point-imprecision/" />
-<meta property="og:image" content="https://blog.andrew-v.com/fpi.jpg" />
+<meta property="og:url" content="https://blog.andrew-v.com/posts/floating-point-imprecision/" /><meta property="og:image" content="https://blog.andrew-v.com/fpi.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-18T16:28:51+02:00" />
 <meta property="article:modified_time" content="2023-01-18T16:28:51+02:00" />
 
@@ -29,7 +28,7 @@
 </head>
 <body class="container">
     <div class="d-flex flex-column justify-content-center d-lg-flex flex-lg-row justify-content-lg-between py-4 align-items-center d-sm-flex flex-sm-column justify-content-sm-center my-4 pb-3 mb-4 border-bottom">
-    <a href="https://paizo.com/community/blog/v5748dyo6si7y?The-ORC-Alliance-Grows" class="text-decoration-none text-black" target="_blank"><p class="d-none d-lg-inline pt-3">The time of the ORC has come</p></a>
+    <a href="#" class="text-decoration-none text-black" target=""><p class="d-none d-lg-inline pt-3">Art, Programming, Linux</p></a>
     <a href="/" class="text-decoration-none"> <h1 class="display-4 brand">Andrew&#39;s notes</h1></a>
     <div class="d-flex flex-row justify-content-lg-between mt-4 mt-lg-1">
         <a href="/" class="nav-link text-dark pe-4" aria-current="page">Home</a>
@@ -48,7 +47,7 @@
         <h1 class="display-6 mb-3 fw-bold" id="#">Imprecision and Overflow</h1>
         <p class="fs-4 mb-4">We are working with the fundamental limitation of computing with a finite number of bits</p>
         <div class="">
-            <p class="text-muted">Published on January 18, 2023 <span class="bi bi-dot"> 1588 words </span><span class="bi bi-dot"> 8 min read</span>
+            <p class="text-muted">Published on January 18, 2023 <span class="bi bi-dot"> 1590 words </span><span class="bi bi-dot"> 8 min read</span>
             
                 <span class="bi bi-dot "></span>
                 
@@ -79,57 +78,57 @@
     <a href="#floating-point-imprecision" class="text-decoration-none"> # </a>
 </h2>
 <p>When we need to work with a decimal number the computer converts it to a floating point representation in binary. However due to the aforementioned finite amount of bits assigned our data types, the converted number is a close approximation rather than an exact one. This leads to small errors which can accumulate within our calculations leading to imprecise results.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>() {
-    <span style="color:#8be9fd">float</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.0</span>;
-    <span style="color:#8be9fd">float</span> y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.1</span>;
-
-    <span style="color:#ff79c6">for</span> ( <span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">10</span>; i<span style="color:#ff79c6">++</span>)
-        x<span style="color:#ff79c6">+=</span>y;
-
-    printf(<span style="color:#f1fa8c">&#34;%f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,x);
-}
-</code></pre></div><p>In this program we simply add the amount of <code>y</code> to <code>x</code> ten times and then print the result to the console.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">2.000000
-</code></pre></div><p>The program prints 2.0 which seems correct and we move on. But is it correct ? As we mentioned already when we convert our decimal numbers to floating point representations in binary the results are an approximation and thus contain small errors. We should be able to see this accumulation of errors in our program if we simply increased the amount of times that the loop iterates over to a larger number like <code>50000</code>. Under normal circumstances when ignoring the concept of an error the expected result would be 50000 times 0.1 plus 1 which amounts to 5001.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>() {
-    <span style="color:#8be9fd">float</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.0</span>;
-    <span style="color:#8be9fd">float</span> y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.1</span>;
-
-    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">50000</span>; i<span style="color:#ff79c6">++</span>)
-        x<span style="color:#ff79c6">+=</span>y;
-
-    printf(<span style="color:#f1fa8c">&#34;%f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,x);
-    printf(<span style="color:#f1fa8c">&#34;Expected: 5001</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    printf(<span style="color:#f1fa8c">&#34;Error: %f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,x<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5001</span>);
-}
-</code></pre></div><p>Lets see what the computer thinks.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">5003.530273
-Expected: 5001
-Error: 2.530273
-</code></pre></div><p>We can clearly see that the error indeed exists and that it accumulates over time as expected. Sometimes the result will be more than the expected number and others it will be less but the point of discussion is that it is there and it affects our computing. The longer we let our program run the bigger the error will be.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">float</span> x <span style="color:#555">=</span> <span style="color:#f60">1.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">float</span> y <span style="color:#555">=</span> <span style="color:#f60">0.1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> ( <span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> <span style="color:#f60">10</span>; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>        x<span style="color:#555">+=</span>y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,x);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this program we simply add the amount of <code>y</code> to <code>x</code> ten times and then print the result to the console.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>2.000000
+</span></span></code></pre></div><p>The program prints 2.0 which seems correct and we move on. But is it correct ? As we mentioned already when we convert our decimal numbers to floating point representations in binary the results are an approximation and thus contain small errors. We should be able to see this accumulation of errors in our program if we simply increased the amount of times that the loop iterates over to a larger number like <code>50000</code>. Under normal circumstances when ignoring the concept of an error the expected result would be 50000 times 0.1 plus 1 which amounts to 5001.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">float</span> x <span style="color:#555">=</span> <span style="color:#f60">1.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">float</span> y <span style="color:#555">=</span> <span style="color:#f60">0.1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> (<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> <span style="color:#f60">50000</span>; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>        x<span style="color:#555">+=</span>y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,x);
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Expected: 5001</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Error: %f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,x<span style="color:#555">-</span><span style="color:#f60">5001</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Lets see what the computer thinks.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>5003.530273
+</span></span><span style="display:flex;"><span>Expected: 5001
+</span></span><span style="display:flex;"><span>Error: 2.530273
+</span></span></code></pre></div><p>We can clearly see that the error indeed exists and that it accumulates over time as expected. Sometimes the result will be more than the expected number and others it will be less but the point of discussion is that it is there and it affects our computing. The longer we let our program run the bigger the error will be.</p>
 <p>Using our understanding of the issue so far it should be clear that it is not possible to entirely alleviate FPI because it is a fundamental limitation of our way of representing real numbers using a finite number of bits. The solution to our predicament is to &ldquo;lessen&rdquo; its impact using better e.g more precise data types. When we say more precise we actually mean that we use more bits to represent the data held within the data type which in theory should make our problem less noticeable. In C, a &lsquo;more precise&rsquo; data type than <code>float</code> would be a <code>double</code> or double-precision floating point. Let us change our program so that it uses double instead of float and then check the results.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>() {
-    <span style="color:#8be9fd">double</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.0</span>;
-    <span style="color:#8be9fd">double</span> y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.1</span>;
-
-    <span style="color:#ff79c6">for</span> ( <span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">50000</span>; i<span style="color:#ff79c6">++</span>)
-        x<span style="color:#ff79c6">+=</span>y;
-
-    printf(<span style="color:#f1fa8c">&#34;%f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,x);
-    printf(<span style="color:#f1fa8c">&#34;Expected: 5001</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    printf(<span style="color:#f1fa8c">&#34;Error: %f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,x<span style="color:#ff79c6">-</span><span style="color:#bd93f9">5001</span>);
-}
-</code></pre></div><p>This time with improved precision the results are :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">5001.000000
-Expected: 5001
-Error: 0.000000
-</code></pre></div><p>This seems to fix the problem although it is important to understand that this issue cannot be fixed , it can only be improved upon with &ldquo;better&rdquo; data types which should be carefully assigned according to the needs of the application that is being designed. In fact if we change our program to iterate from 50.000 to 5.000.000 we will see the error become noticeable again. For scientific or financial applications where precision is key there are better data types that can be used such as the <code>long double</code>. Additionally there are libraries out there that improve upon the issue such as Multiple Precision Floating-point Reliable (MPFR) and GNU Multiple Precision (GMP).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">double</span> x <span style="color:#555">=</span> <span style="color:#f60">1.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">double</span> y <span style="color:#555">=</span> <span style="color:#f60">0.1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> ( <span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> <span style="color:#f60">50000</span>; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>        x<span style="color:#555">+=</span>y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,x);
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Expected: 5001</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Error: %f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,x<span style="color:#555">-</span><span style="color:#f60">5001</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This time with improved precision the results are :</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>5001.000000
+</span></span><span style="display:flex;"><span>Expected: 5001
+</span></span><span style="display:flex;"><span>Error: 0.000000
+</span></span></code></pre></div><p>This seems to fix the problem although it is important to understand that this issue cannot be fixed , it can only be improved upon with &ldquo;better&rdquo; data types which should be carefully assigned according to the needs of the application that is being designed. In fact if we change our program to iterate from 50.000 to 5.000.000 we will see the error become noticeable again. For scientific or financial applications where precision is key there are better data types that can be used such as the <code>long double</code>. Additionally there are libraries out there that improve upon the issue such as Multiple Precision Floating-point Reliable (MPFR) and GNU Multiple Precision (GMP).</p>
 
 
 <h2 id="integer-overflow" class="hoverMe">
@@ -141,134 +140,134 @@ Error: 0.000000
 <p>In most modern computers, integers are represented using a fixed number of bits, typically 8, 16, 32, or 64 bits. The number of bits used to represent an integer determines the range of values that can be represented by that integer.</p>
 <p>For example, an 8-bit integer can represent values from -128 to 127, while a 16-bit integer can represent values from -32768 to 32767. A 32-bit integer can represent values from -2147483648 to 2147483647, while a 64-bit integer can represent values from -9223372036854775808 to 9223372036854775807.</p>
 <p>Lets write a program to demonstrate integer overflow in action. In the following program we will have a never ending for-loop which doubles the value of <code>i</code> on each iteration. We use the <code>&lt;unistd.h&gt;</code> header in order to have the sleep function delay each iteration of the loop by one second so we can witness and comprehend the results in real time.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;unistd.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(<span style="color:#8be9fd">void</span>)
-{
-    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; ; i <span style="color:#ff79c6">*=</span> <span style="color:#bd93f9">2</span>)
-    {
-        printf(<span style="color:#f1fa8c">&#34;%i</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, i);
-        sleep(<span style="color:#bd93f9">1</span>);
-    }
-}
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1
-2
-4
-8
-16
-32
-64
-128
-256
-512
-1024
-2048
-4096
-8192
-16384
-32768
-65536
-131072
-262144
-524288
-1048576
-2097152
-4194304
-8388608
-16777216
-33554432
-67108864
-134217728
-268435456
-536870912
-1073741824
--2147483648
-0
-0
-0
-</code></pre></div><p>As our <code>i</code> gets in the billions by reaching <strong>1073741824</strong> it tries to double itself one more time which means it would reach the value of 2.147.483.648, just 1 higher than the maximum positive value of an <code>int</code> on my system. Surpassing this value means the <code>int</code> overflows its allocated bit size and falls back into its minimum value.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;unistd.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(<span style="color:#078;font-weight:bold">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> (<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">1</span>; ; i <span style="color:#555">*=</span> <span style="color:#f60">2</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%i</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">sleep</span>(<span style="color:#f60">1</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1
+</span></span><span style="display:flex;"><span>2
+</span></span><span style="display:flex;"><span>4
+</span></span><span style="display:flex;"><span>8
+</span></span><span style="display:flex;"><span>16
+</span></span><span style="display:flex;"><span>32
+</span></span><span style="display:flex;"><span>64
+</span></span><span style="display:flex;"><span>128
+</span></span><span style="display:flex;"><span>256
+</span></span><span style="display:flex;"><span>512
+</span></span><span style="display:flex;"><span>1024
+</span></span><span style="display:flex;"><span>2048
+</span></span><span style="display:flex;"><span>4096
+</span></span><span style="display:flex;"><span>8192
+</span></span><span style="display:flex;"><span>16384
+</span></span><span style="display:flex;"><span>32768
+</span></span><span style="display:flex;"><span>65536
+</span></span><span style="display:flex;"><span>131072
+</span></span><span style="display:flex;"><span>262144
+</span></span><span style="display:flex;"><span>524288
+</span></span><span style="display:flex;"><span>1048576
+</span></span><span style="display:flex;"><span>2097152
+</span></span><span style="display:flex;"><span>4194304
+</span></span><span style="display:flex;"><span>8388608
+</span></span><span style="display:flex;"><span>16777216
+</span></span><span style="display:flex;"><span>33554432
+</span></span><span style="display:flex;"><span>67108864
+</span></span><span style="display:flex;"><span>134217728
+</span></span><span style="display:flex;"><span>268435456
+</span></span><span style="display:flex;"><span>536870912
+</span></span><span style="display:flex;"><span>1073741824
+</span></span><span style="display:flex;"><span>-2147483648
+</span></span><span style="display:flex;"><span>0
+</span></span><span style="display:flex;"><span>0
+</span></span><span style="display:flex;"><span>0
+</span></span></code></pre></div><p>As our <code>i</code> gets in the billions by reaching <strong>1073741824</strong> it tries to double itself one more time which means it would reach the value of 2.147.483.648, just 1 higher than the maximum positive value of an <code>int</code> on my system. Surpassing this value means the <code>int</code> overflows its allocated bit size and falls back into its minimum value.</p>
 <p>Likewise with the FPI we can use a &ldquo;better&rdquo; data type in order to accomodate our needs of an integer substantially higher than two billion. In this case we could use the <code>long int</code> data type. If you need even higher range you could opt for using the <code>long long int</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;unistd.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(<span style="color:#8be9fd">void</span>)
-{
-    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd">long</span> <span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; ; i <span style="color:#ff79c6">*=</span> <span style="color:#bd93f9">2</span>)
-    {
-        printf(<span style="color:#f1fa8c">&#34;%li</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, i);
-        sleep(<span style="color:#bd93f9">1</span>);
-    }
-}
-</code></pre></div><p>Notice how in the printf function we changed the format code from <code>%i</code> to <code>%li</code> to account for our data type being of the long variety this time around. It should take substantially more time to reach the maximum.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1
-2
-4
-8
-16
-32
-64
-128
-256
-512
-1024
-2048
-4096
-8192
-16384
-32768
-65536
-131072
-262144
-524288
-1048576
-2097152
-4194304
-8388608
-16777216
-33554432
-67108864
-134217728
-268435456
-536870912
-1073741824
-2147483648
-4294967296
-8589934592
-17179869184
-34359738368
-68719476736
-137438953472
-274877906944
-549755813888
-1099511627776
-2199023255552
-4398046511104
-8796093022208
-17592186044416
-35184372088832
-70368744177664
-140737488355328
-281474976710656
-562949953421312
-1125899906842624
-2251799813685248
-4503599627370496
-9007199254740992
-18014398509481984
-36028797018963968
-72057594037927936
-144115188075855872
-288230376151711744
-576460752303423488
-1152921504606846976
-2305843009213693952
-4611686018427387904
--9223372036854775808
-0
-0
-0
-</code></pre></div><p>Works like a charm.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;unistd.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(<span style="color:#078;font-weight:bold">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> (<span style="color:#078;font-weight:bold">long</span> <span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">1</span>; ; i <span style="color:#555">*=</span> <span style="color:#f60">2</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%li</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">sleep</span>(<span style="color:#f60">1</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Notice how in the printf function we changed the format code from <code>%i</code> to <code>%li</code> to account for our data type being of the long variety this time around. It should take substantially more time to reach the maximum.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1
+</span></span><span style="display:flex;"><span>2
+</span></span><span style="display:flex;"><span>4
+</span></span><span style="display:flex;"><span>8
+</span></span><span style="display:flex;"><span>16
+</span></span><span style="display:flex;"><span>32
+</span></span><span style="display:flex;"><span>64
+</span></span><span style="display:flex;"><span>128
+</span></span><span style="display:flex;"><span>256
+</span></span><span style="display:flex;"><span>512
+</span></span><span style="display:flex;"><span>1024
+</span></span><span style="display:flex;"><span>2048
+</span></span><span style="display:flex;"><span>4096
+</span></span><span style="display:flex;"><span>8192
+</span></span><span style="display:flex;"><span>16384
+</span></span><span style="display:flex;"><span>32768
+</span></span><span style="display:flex;"><span>65536
+</span></span><span style="display:flex;"><span>131072
+</span></span><span style="display:flex;"><span>262144
+</span></span><span style="display:flex;"><span>524288
+</span></span><span style="display:flex;"><span>1048576
+</span></span><span style="display:flex;"><span>2097152
+</span></span><span style="display:flex;"><span>4194304
+</span></span><span style="display:flex;"><span>8388608
+</span></span><span style="display:flex;"><span>16777216
+</span></span><span style="display:flex;"><span>33554432
+</span></span><span style="display:flex;"><span>67108864
+</span></span><span style="display:flex;"><span>134217728
+</span></span><span style="display:flex;"><span>268435456
+</span></span><span style="display:flex;"><span>536870912
+</span></span><span style="display:flex;"><span>1073741824
+</span></span><span style="display:flex;"><span>2147483648
+</span></span><span style="display:flex;"><span>4294967296
+</span></span><span style="display:flex;"><span>8589934592
+</span></span><span style="display:flex;"><span>17179869184
+</span></span><span style="display:flex;"><span>34359738368
+</span></span><span style="display:flex;"><span>68719476736
+</span></span><span style="display:flex;"><span>137438953472
+</span></span><span style="display:flex;"><span>274877906944
+</span></span><span style="display:flex;"><span>549755813888
+</span></span><span style="display:flex;"><span>1099511627776
+</span></span><span style="display:flex;"><span>2199023255552
+</span></span><span style="display:flex;"><span>4398046511104
+</span></span><span style="display:flex;"><span>8796093022208
+</span></span><span style="display:flex;"><span>17592186044416
+</span></span><span style="display:flex;"><span>35184372088832
+</span></span><span style="display:flex;"><span>70368744177664
+</span></span><span style="display:flex;"><span>140737488355328
+</span></span><span style="display:flex;"><span>281474976710656
+</span></span><span style="display:flex;"><span>562949953421312
+</span></span><span style="display:flex;"><span>1125899906842624
+</span></span><span style="display:flex;"><span>2251799813685248
+</span></span><span style="display:flex;"><span>4503599627370496
+</span></span><span style="display:flex;"><span>9007199254740992
+</span></span><span style="display:flex;"><span>18014398509481984
+</span></span><span style="display:flex;"><span>36028797018963968
+</span></span><span style="display:flex;"><span>72057594037927936
+</span></span><span style="display:flex;"><span>144115188075855872
+</span></span><span style="display:flex;"><span>288230376151711744
+</span></span><span style="display:flex;"><span>576460752303423488
+</span></span><span style="display:flex;"><span>1152921504606846976
+</span></span><span style="display:flex;"><span>2305843009213693952
+</span></span><span style="display:flex;"><span>4611686018427387904
+</span></span><span style="display:flex;"><span>-9223372036854775808
+</span></span><span style="display:flex;"><span>0
+</span></span><span style="display:flex;"><span>0
+</span></span><span style="display:flex;"><span>0
+</span></span></code></pre></div><p>Works like a charm.</p>
 <p>Another way to increase the maximum limit of your integers without using a bigger data type such as <code>long</code> is to use <code>unsigned int</code> over just int. An unsigned int cannot be a negative number but retains its range which means that it will have a greater positive maximum than a normal <code>int</code>. On my machine that maximum is <strong>4.294.967.295</strong>.</p>
 <hr>
 <p>In conclusion, floating point imprecision and integer overflow are evidently important issues that can affect the accuracy and correctness of a program. You can read some real world <a href="https://en.m.wikipedia.org/wiki/Integer_overflow#Examples">examples</a> of problems caused by FPI and IO over at Wikipedia. These examples demonstrate the importance of being aware of floating point imprecision and integer overflow, and taking the appropriate measures to avoid them in order to prevent serious problems in real-world applications.</p>
@@ -323,7 +322,7 @@ Error: 0.000000
         <a href="https://t.me/+cH3f1gJUqCY2NTI0" title="Stay updated on Telegram" class="text-black" target="_blank"><i class="bi bi-telegram pe-4"></i></a>
         <a href="/index.xml" title="View the RSS sitemap" class="text-black" target="_blank"><i class="bi bi-rss-fill "></i></a>
     </div>
-    <p class="text-center pt-4"> &copy; 2023 Andrew V | All rights reserved</p>
+    <p class="text-center pt-4"> &copy; 2024 Andrew V | All rights reserved</p>
 </footer>
 
     

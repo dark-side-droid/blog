@@ -9,8 +9,7 @@
     <meta property="og:title" content="C Programming Language  - Chapter 1 Solutions" />
 <meta property="og:description" content="The solution to each exercise of Chapter 1 of the &lsquo;The C Programming Language&rsquo; book." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.andrew-v.com/posts/c-programming/exercises-1/" />
-<meta property="og:image" content="https://blog.andrew-v.com/c-programming-language-book-cover2.jpg" />
+<meta property="og:url" content="https://blog.andrew-v.com/posts/c-programming/exercises-1/" /><meta property="og:image" content="https://blog.andrew-v.com/c-programming-language-book-cover2.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-12-20T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-12-20T00:00:00+00:00" />
 
@@ -29,7 +28,7 @@
 </head>
 <body class="container">
     <div class="d-flex flex-column justify-content-center d-lg-flex flex-lg-row justify-content-lg-between py-4 align-items-center d-sm-flex flex-sm-column justify-content-sm-center my-4 pb-3 mb-4 border-bottom">
-    <a href="https://paizo.com/community/blog/v5748dyo6si7y?The-ORC-Alliance-Grows" class="text-decoration-none text-black" target="_blank"><p class="d-none d-lg-inline pt-3">The time of the ORC has come</p></a>
+    <a href="#" class="text-decoration-none text-black" target=""><p class="d-none d-lg-inline pt-3">Art, Programming, Linux</p></a>
     <a href="/" class="text-decoration-none"> <h1 class="display-4 brand">Andrew&#39;s notes</h1></a>
     <div class="d-flex flex-row justify-content-lg-between mt-4 mt-lg-1">
         <a href="/" class="nav-link text-dark pe-4" aria-current="page">Home</a>
@@ -48,7 +47,7 @@
         <h1 class="display-6 mb-3 fw-bold" id="#">C Programming Language  - Chapter 1 Solutions</h1>
         <p class="fs-4 mb-4">The solution to each exercise of Chapter 1 of the &lsquo;The C Programming Language&rsquo; book.</p>
         <div class="">
-            <p class="text-muted">Published on December 20, 2022 <span class="bi bi-dot"> 2931 words </span><span class="bi bi-dot"> 14 min read</span>
+            <p class="text-muted">Published on December 20, 2022 <span class="bi bi-dot"> 2932 words </span><span class="bi bi-dot"> 14 min read</span>
             
                 <span class="bi bi-dot "></span>
                 
@@ -117,16 +116,16 @@
     <a href="#exercise-1-1" class="text-decoration-none"> # </a>
 </h2>
 <hr>
-<p><em>Run the ``hello, world'' program on your system. Experiment with leaving out parts of the program, to see what error messages you get.</em></p>
+<p><em>Run the ``hello, world&rsquo;&rsquo; program on your system. Experiment with leaving out parts of the program, to see what error messages you get.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-    printf(<span style="color:#f1fa8c">&#34;Hello World</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Hello World</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-2" class="hoverMe">
     Exercise 1-2 
@@ -148,33 +147,33 @@
 <p><em>Modify the temperature conversion program to print a heading above the table.</em></p>
 <p>This chapter contains a program that prints to the console a converstion from fahrenite to celcius.</p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#6272a4">/* print Fahrenheit-Celsius table
-</span><span style="color:#6272a4">for fahr = 0, 20, ..., 300; floating-point version */</span>
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-    <span style="color:#8be9fd">float</span> fahr, celsius;
-    <span style="color:#8be9fd">float</span> lower, upper, step;
-    
-    lower <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;  <span style="color:#6272a4">/* lower limit of temperatuire scale */</span>
-    upper <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">300</span>;    <span style="color:#6272a4">/* upper limit */</span>
-    step <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">20</span>;    <span style="color:#6272a4">/* step size */</span>
-
-    fahr <span style="color:#ff79c6">=</span> lower;
-    
-    printf(<span style="color:#f1fa8c">&#34;Fahrenite to Celcius</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);   <span style="color:#6272a4">/*solution*/</span>
-    printf(<span style="color:#f1fa8c">&#34;====================</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    
-    <span style="color:#ff79c6">while</span> (fahr <span style="color:#ff79c6">&lt;=</span> upper) {
-        celsius <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">5.0</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">9.0</span>) <span style="color:#ff79c6">*</span> (fahr<span style="color:#ff79c6">-</span><span style="color:#bd93f9">32.0</span>);
-        printf(<span style="color:#f1fa8c">&#34;%3.0f %6.1f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, fahr, celsius);
-        fahr <span style="color:#ff79c6">=</span> fahr <span style="color:#ff79c6">+</span> step;
-    }
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">/* print Fahrenheit-Celsius table
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">for fahr = 0, 20, ..., 300; floating-point version */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">float</span> fahr, celsius;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">float</span> lower, upper, step;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    lower <span style="color:#555">=</span> <span style="color:#f60">0</span>;  <span style="color:#09f;font-style:italic">/* lower limit of temperatuire scale */</span>
+</span></span><span style="display:flex;"><span>    upper <span style="color:#555">=</span> <span style="color:#f60">300</span>;    <span style="color:#09f;font-style:italic">/* upper limit */</span>
+</span></span><span style="display:flex;"><span>    step <span style="color:#555">=</span> <span style="color:#f60">20</span>;    <span style="color:#09f;font-style:italic">/* step size */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fahr <span style="color:#555">=</span> lower;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Fahrenite to Celcius</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);   <span style="color:#09f;font-style:italic">/*solution*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;====================</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span> (fahr <span style="color:#555">&lt;=</span> upper) {
+</span></span><span style="display:flex;"><span>        celsius <span style="color:#555">=</span> (<span style="color:#f60">5.0</span><span style="color:#555">/</span><span style="color:#f60">9.0</span>) <span style="color:#555">*</span> (fahr<span style="color:#555">-</span><span style="color:#f60">32.0</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%3.0f %6.1f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, fahr, celsius);
+</span></span><span style="display:flex;"><span>        fahr <span style="color:#555">=</span> fahr <span style="color:#555">+</span> step;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-4" class="hoverMe">
     Exercise 1-4 
@@ -184,29 +183,29 @@
 <p><em>Write a program to print the corresponding Celsius to Fahrenheit table.</em></p>
 <p>Note : The formula for converting Celcius to Fahrenheit is F = (C * 1.8) + 32</p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-	<span style="color:#8be9fd">float</span> celcius, fahr;
-	<span style="color:#8be9fd">float</span> lower, upper, step;
-
-	lower <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-	upper <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">160</span>;
-	step <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">20</span>;
-
-	celcius <span style="color:#ff79c6">=</span> lower;
-
-	printf(<span style="color:#f1fa8c">&#34;Celcius to Fahrenheit</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-	printf(<span style="color:#f1fa8c">&#34;====================</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-	<span style="color:#ff79c6">while</span>(celcius <span style="color:#ff79c6">&lt;=</span> upper)
-	{
-		fahr <span style="color:#ff79c6">=</span> (celcius <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">1.8</span>) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">32</span>;
-		printf(<span style="color:#f1fa8c">&#34;%3.0f %6.0f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, celcius, fahr);
-		celcius<span style="color:#ff79c6">+=</span> step;
-	};
-	<span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(){
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">float</span> celcius, fahr;
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">float</span> lower, upper, step;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	lower <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>	upper <span style="color:#555">=</span> <span style="color:#f60">160</span>;
+</span></span><span style="display:flex;"><span>	step <span style="color:#555">=</span> <span style="color:#f60">20</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	celcius <span style="color:#555">=</span> lower;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Celcius to Fahrenheit</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;====================</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">while</span>(celcius <span style="color:#555">&lt;=</span> upper)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		fahr <span style="color:#555">=</span> (celcius <span style="color:#555">*</span> <span style="color:#f60">1.8</span>) <span style="color:#555">+</span> <span style="color:#f60">32</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%3.0f %6.0f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, celcius, fahr);
+</span></span><span style="display:flex;"><span>		celcius<span style="color:#555">+=</span> step;
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-5" class="hoverMe">
     Exercise 1-5 
@@ -216,29 +215,29 @@
 <p><em>Modify the temperature conversion program to print the table in reverse order,
 that is, from 300 degrees to 0.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-	<span style="color:#8be9fd">float</span> celcius, fahr;
-	<span style="color:#8be9fd">float</span> lower, upper, step;
-
-	lower <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-	upper <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">160</span>;
-	step <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">20</span>;
-
-	celcius <span style="color:#ff79c6">=</span> upper;
-
-	printf(<span style="color:#f1fa8c">&#34;Celcius to Fahrenheit</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-	printf(<span style="color:#f1fa8c">&#34;====================</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-	<span style="color:#ff79c6">while</span>(celcius <span style="color:#ff79c6">&gt;=</span> lower)
-	{
-		fahr <span style="color:#ff79c6">=</span> (celcius <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">1.8</span>) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">32</span>;
-		printf(<span style="color:#f1fa8c">&#34;%3.0f %6.0f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, celcius, fahr);
-		celcius<span style="color:#ff79c6">-=</span> step;
-	};
-	<span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(){
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">float</span> celcius, fahr;
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">float</span> lower, upper, step;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	lower <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>	upper <span style="color:#555">=</span> <span style="color:#f60">160</span>;
+</span></span><span style="display:flex;"><span>	step <span style="color:#555">=</span> <span style="color:#f60">20</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	celcius <span style="color:#555">=</span> upper;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Celcius to Fahrenheit</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;====================</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">while</span>(celcius <span style="color:#555">&gt;=</span> lower)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		fahr <span style="color:#555">=</span> (celcius <span style="color:#555">*</span> <span style="color:#f60">1.8</span>) <span style="color:#555">+</span> <span style="color:#f60">32</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%3.0f %6.0f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, celcius, fahr);
+</span></span><span style="display:flex;"><span>		celcius<span style="color:#555">-=</span> step;
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-6" class="hoverMe">
     Exercise 1-6 
@@ -247,17 +246,17 @@ that is, from 300 degrees to 0.</em></p>
 <hr>
 <p><em>Verify that the expression getchar() != EOF is 0 or 1.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-    <span style="color:#8be9fd">int</span> d,c;
-    
-    <span style="color:#ff79c6">while</span>(d <span style="color:#ff79c6">=</span> (c<span style="color:#ff79c6">=</span>getchar() <span style="color:#ff79c6">!=</span> EOF))
-        printf(<span style="color:#f1fa8c">&#34;%d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,d);
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div><p>Every time that the contents of the while loop are evaluated and contents of C are not equal to EOF, the expression is evaluated to equal 1.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> d,c;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span>(d <span style="color:#555">=</span> (c<span style="color:#555">=</span><span style="color:#c0f">getchar</span>() <span style="color:#555">!=</span> EOF))
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,d);
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Every time that the contents of the while loop are evaluated and contents of C are not equal to EOF, the expression is evaluated to equal 1.</p>
 
 
 <h2 id="exercise-1-7" class="hoverMe">
@@ -270,13 +269,13 @@ that is, from 300 degrees to 0.</em></p>
 <p><a href="https://en.wikipedia.org/wiki/End-of-file">EOF</a> stands for End of File. It is returned to us whenever we use a character reading function such as <code>getchar()</code> to read from a file or from user input and there is no more data to be read e.g it finished returning the contents of the file.</p>
 <p>The value of EOF is implementation dependent and is commonly -1.</p>
 <p>NOTE: On unix systems the input that causes an end of file is <strong>CTRL+D</strong>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-    printf (<span style="color:#f1fa8c">&#34;End of File Value : %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, EOF);
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span> (<span style="color:#c30">&#34;End of File Value : %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, EOF);
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-8" class="hoverMe">
     Exercise 1-8 
@@ -284,30 +283,29 @@ that is, from 300 degrees to 0.</em></p>
 </h2>
 <hr>
 <p><em>Write a program to count blanks, tabs, and newlines.</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-        <span style="color:#8be9fd">int</span> c, nl, tabs, spaces;
-        c <span style="color:#ff79c6">=</span> nl <span style="color:#ff79c6">=</span> tabs <span style="color:#ff79c6">=</span> spaces <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-
-        <span style="color:#ff79c6">while</span> ((c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF){
-                <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>)
-                        nl<span style="color:#ff79c6">++</span>;
-                <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>)
-                        tabs<span style="color:#ff79c6">++</span>;
-                <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span>)
-                        spaces<span style="color:#ff79c6">++</span>;
-        };
-        
-        printf(<span style="color:#f1fa8c">&#34;new lines: %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,nl);
-        printf(<span style="color:#f1fa8c">&#34;tabs: %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, tabs);
-        printf(<span style="color:#f1fa8c">&#34;spaces: %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, spaces);
-        
-        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#078;font-weight:bold">int</span> c, nl, tabs, spaces;
+</span></span><span style="display:flex;"><span>        c <span style="color:#555">=</span> nl <span style="color:#555">=</span> tabs <span style="color:#555">=</span> spaces <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">while</span> ((c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF){
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>                        nl<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span>)
+</span></span><span style="display:flex;"><span>                        tabs<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span>)
+</span></span><span style="display:flex;"><span>                        spaces<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;new lines: %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,nl);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;tabs: %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, tabs);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;spaces: %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, spaces);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-9" class="hoverMe">
     Exercise 1-9 
@@ -317,34 +315,34 @@ that is, from 300 degrees to 0.</em></p>
 <p><em>Write a program to copy its input to its output, replacing each string of one or
 more blanks by a single blank.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#6272a4">/* we will use IN and OUT to determine whether we are in a series of blanks or not */</span>
-
-<span style="color:#ff79c6">#define IN 1 
-</span><span style="color:#ff79c6">#define OUT 0
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-    <span style="color:#8be9fd">int</span> c, state;
-    
-    state <span style="color:#ff79c6">=</span> OUT;
-    <span style="color:#ff79c6">while</span> ((c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF){
-        <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">||</span> c<span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>)
-            state <span style="color:#ff79c6">=</span> IN;
-            
-        <span style="color:#ff79c6">if</span> (state <span style="color:#ff79c6">==</span> OUT)
-            putchar(c);
-            
-        <span style="color:#ff79c6">if</span> (state <span style="color:#ff79c6">==</span> IN <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>){
-            state <span style="color:#ff79c6">=</span> OUT;
-            putchar(<span style="color:#f1fa8c">&#39; &#39;</span>);
-            putchar(c);
-        };
-
-    };
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">/* we will use IN and OUT to determine whether we are in a series of blanks or not */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define IN 1 
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#define OUT 0
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c, state;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    state <span style="color:#555">=</span> OUT;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span> ((c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF){
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">||</span> c<span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span>)
+</span></span><span style="display:flex;"><span>            state <span style="color:#555">=</span> IN;
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> (state <span style="color:#555">==</span> OUT)
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(c);
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> (state <span style="color:#555">==</span> IN <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39;\t&#39;</span>){
+</span></span><span style="display:flex;"><span>            state <span style="color:#555">=</span> OUT;
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(c);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-10" class="hoverMe">
     Exercise 1-10 
@@ -353,34 +351,34 @@ more blanks by a single blank.</em></p>
 <hr>
 <p><em>Write a program to copy its input to its output, replacing each tab by \t, each backspace by \b, and each backslash by \ \ . This makes tabs and backspaces visible in an unambiguous way.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-    <span style="color:#8be9fd">int</span> c;
-    
-    <span style="color:#ff79c6">while</span> ((c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF){
-        <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>){
-            putchar(<span style="color:#f1fa8c">&#39;\\&#39;</span>);
-            putchar(<span style="color:#f1fa8c">&#39;t&#39;</span>);
-        };
-        
-        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\b&#39;</span>){
-            putchar(<span style="color:#f1fa8c">&#39;\\&#39;</span>);
-            putchar(<span style="color:#f1fa8c">&#39;b&#39;</span>);
-        };
-        
-        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\\&#39;</span>){
-            putchar(<span style="color:#f1fa8c">&#39;\\&#39;</span>);
-            putchar(<span style="color:#f1fa8c">&#39;\\&#39;</span>);
-        };
-        <span style="color:#ff79c6">else</span>
-            putchar(c);
-    };
-    
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span> ((c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF){
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39;\\&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39;t&#39;</span>);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39;\b&#39;</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39;\\&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39;b&#39;</span>);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">else</span> <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39;\\&#39;</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39;\\&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39;\\&#39;</span>);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(c);
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-11" class="hoverMe">
     Exercise 1-11 
@@ -390,43 +388,42 @@ more blanks by a single blank.</em></p>
 <p><em>How would you test the word count program? What kinds of input are most likely to uncover bugs if there are any?</em></p>
 <p><strong>Solution</strong></p>
 <p>Essentially in the word counting program as written in the book there is intentionally an issue where any type of input is counted as a char. It doesn&rsquo;t matter if its a  space, or a tab, or a new line, it still gets evaluated as a character which could be improved upon for human interpretation of the program&rsquo;s output. A way that the program could be improved is by making sure that only non-blank non-space characters are counted as such.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define IN 1
-</span><span style="color:#ff79c6">#define OUT 0
-</span><span style="color:#ff79c6"></span>
-<span style="color:#6272a4">/* count lines, words and characters in input */</span>
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-        <span style="color:#8be9fd">int</span> c,nl,wc, nc, state;
-        nc <span style="color:#ff79c6">=</span> nl <span style="color:#ff79c6">=</span> wc <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-
-        state <span style="color:#ff79c6">=</span> OUT;
-
-        <span style="color:#ff79c6">while</span>((c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF){
-                <span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>)
-                        nl<span style="color:#ff79c6">++</span>;
-
-                <span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\t&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>){
-                        <span style="color:#ff79c6">++</span>nc;
-                        state <span style="color:#ff79c6">=</span> IN;
-                };
-                <span style="color:#ff79c6">if</span> (state <span style="color:#ff79c6">==</span> IN){
-                        <span style="color:#ff79c6">if</span>( c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">||</span> c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span> <span style="color:#ff79c6">||</span> c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>){
-                                state <span style="color:#ff79c6">=</span> OUT;
-                                <span style="color:#ff79c6">++</span>wc;
-                        };
-                };
-
-        };
-        printf(<span style="color:#f1fa8c">&#34;words: %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,wc);
-        printf(<span style="color:#f1fa8c">&#34;chars: %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,nc);
-        printf(<span style="color:#f1fa8c">&#34;lines: %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,nl);
-        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define IN 1
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#define OUT 0
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">/* count lines, words and characters in input */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#078;font-weight:bold">int</span> c,nl,wc, nc, state;
+</span></span><span style="display:flex;"><span>        nc <span style="color:#555">=</span> nl <span style="color:#555">=</span> wc <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        state <span style="color:#555">=</span> OUT;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">while</span>((c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF){
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>                        nl<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">!=</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39;\t&#39;</span> <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39;\n&#39;</span>){
+</span></span><span style="display:flex;"><span>                        <span style="color:#555">++</span>nc;
+</span></span><span style="display:flex;"><span>                        state <span style="color:#555">=</span> IN;
+</span></span><span style="display:flex;"><span>                };
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span> (state <span style="color:#555">==</span> IN){
+</span></span><span style="display:flex;"><span>                        <span style="color:#069;font-weight:bold">if</span>( c <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">||</span> c <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span> <span style="color:#555">||</span> c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span>){
+</span></span><span style="display:flex;"><span>                                state <span style="color:#555">=</span> OUT;
+</span></span><span style="display:flex;"><span>                                <span style="color:#555">++</span>wc;
+</span></span><span style="display:flex;"><span>                        };
+</span></span><span style="display:flex;"><span>                };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;words: %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,wc);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;chars: %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,nc);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;lines: %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,nl);
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-12" class="hoverMe">
     Exercise 1-12 
@@ -435,25 +432,24 @@ more blanks by a single blank.</em></p>
 <hr>
 <p><em>Write a program that prints its input one word per line.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-        <span style="color:#8be9fd">int</span> c;
-
-        <span style="color:#6272a4">/* write a program that prints its input one word per line */</span>
-        
-        <span style="color:#ff79c6">while</span> ((c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF){
-                <span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">||</span> c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span> <span style="color:#ff79c6">||</span> c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>)
-                        putchar(<span style="color:#f1fa8c">&#39;\n&#39;</span>);
-                <span style="color:#ff79c6">else</span>
-                        putchar(c);
-        };
-
-        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#078;font-weight:bold">int</span> c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic">/* write a program that prints its input one word per line */</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">while</span> ((c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF){
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">||</span> c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span> <span style="color:#555">||</span> c <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span>)
+</span></span><span style="display:flex;"><span>                        <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39;\n&#39;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#c0f">putchar</span>(c);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-13" class="hoverMe">
     Exercise 1-13 
@@ -462,60 +458,59 @@ more blanks by a single blank.</em></p>
 <hr>
 <p><em>Write a program to print a histogram of the lengths of the words in its input. It is easy to draw the histogram with the bars horizontal; a vertical orientation is more challenging</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define BUFFER 15
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-    <span style="color:#6272a4">// define variables
-</span><span style="color:#6272a4"></span>
-    <span style="color:#8be9fd">int</span> letterCount <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    <span style="color:#8be9fd">int</span> letterMax <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    <span style="color:#8be9fd">int</span> wordarr[BUFFER];
-    <span style="color:#8be9fd">int</span> arrlength <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-
-    <span style="color:#6272a4">// initialize array
-</span><span style="color:#6272a4"></span>
-    <span style="color:#8be9fd">int</span> c ;
-    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> BUFFER; i<span style="color:#ff79c6">++</span>)
-        wordarr[i] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    
-    <span style="color:#6272a4">// check longest word
-</span><span style="color:#6272a4"></span>    printf(<span style="color:#f1fa8c">&#34;CTRL+D to stop.</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    <span style="color:#ff79c6">while</span>((c<span style="color:#ff79c6">=</span>getchar())<span style="color:#ff79c6">!=</span>EOF)
-    {
-        <span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">||</span> c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span> <span style="color:#ff79c6">||</span> c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span> <span style="color:#ff79c6">||</span> c<span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;.&#39;</span>){
-            <span style="color:#ff79c6">if</span>(letterCount<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">0</span>){
-                <span style="color:#ff79c6">if</span>(letterCount<span style="color:#ff79c6">&gt;</span>letterMax)
-                    letterMax<span style="color:#ff79c6">=</span>letterCount;
-                    arrlength<span style="color:#ff79c6">=</span>letterMax;
-                <span style="color:#ff79c6">++</span>wordarr[letterCount<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>];
-            }
-            
-            letterCount <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-        }<span style="color:#ff79c6">else</span>{
-            letterCount<span style="color:#ff79c6">++</span>;
-        };
-    }
-    
-    <span style="color:#6272a4">// construct horizontal histogram
-</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> linecount <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    printf(<span style="color:#f1fa8c">&#34;===============</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    printf(<span style="color:#f1fa8c">&#34;HISTOGRAM</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    printf(<span style="color:#f1fa8c">&#34;===============</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    <span style="color:#ff79c6">while</span>(linecount <span style="color:#ff79c6">&lt;</span> arrlength){
-        printf(<span style="color:#f1fa8c">&#34;%2d letter(s):</span><span style="color:#f1fa8c">\t</span><span style="color:#f1fa8c">&#34;</span>,linecount<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>);
-        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>wordarr[linecount]; i<span style="color:#ff79c6">++</span>){
-            printf(<span style="color:#f1fa8c">&#34;*&#34;</span>);
-        }
-        printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-        linecount<span style="color:#ff79c6">++</span>;
-    }
-    printf(<span style="color:#f1fa8c">&#34;===============</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define BUFFER 15
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic">// define variables
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> letterCount <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> letterMax <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> wordarr[BUFFER];
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> arrlength <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic">// initialize array
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c ;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> BUFFER; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>        wordarr[i] <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic">// check longest word
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;CTRL+D to stop.</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span>((c<span style="color:#555">=</span><span style="color:#c0f">getchar</span>())<span style="color:#555">!=</span>EOF)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">||</span> c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span> <span style="color:#555">||</span> c <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span> <span style="color:#555">||</span> c<span style="color:#555">==</span><span style="color:#c30">&#39;.&#39;</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">if</span>(letterCount<span style="color:#555">&gt;</span><span style="color:#f60">0</span>){
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>(letterCount<span style="color:#555">&gt;</span>letterMax)
+</span></span><span style="display:flex;"><span>                    letterMax<span style="color:#555">=</span>letterCount;
+</span></span><span style="display:flex;"><span>                    arrlength<span style="color:#555">=</span>letterMax;
+</span></span><span style="display:flex;"><span>                <span style="color:#555">++</span>wordarr[letterCount<span style="color:#555">-</span><span style="color:#f60">1</span>];
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            letterCount <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>        }<span style="color:#069;font-weight:bold">else</span>{
+</span></span><span style="display:flex;"><span>            letterCount<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic">// construct horizontal histogram
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>    <span style="color:#078;font-weight:bold">int</span> linecount <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;===============</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;HISTOGRAM</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;===============</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span>(linecount <span style="color:#555">&lt;</span> arrlength){
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%2d letter(s):</span><span style="color:#c30;font-weight:bold">\t</span><span style="color:#c30">&#34;</span>,linecount<span style="color:#555">+</span><span style="color:#f60">1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i<span style="color:#555">&lt;</span>wordarr[linecount]; i<span style="color:#555">++</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;*&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>        linecount<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;===============</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-14" class="hoverMe">
     Exercise 1-14 
@@ -526,44 +521,44 @@ more blanks by a single blank.</em></p>
 in its input</em></p>
 <p><strong>Solution</strong></p>
 <p>For the sake of simplicity we will only account characters of the alphanumeric spectrum and only lowercase characters.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define NDIGITS 10
-</span><span style="color:#ff79c6">#define NCHARS 26
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-        <span style="color:#6272a4">/* write a program to print a histogram of the frequencies of different characters in its input */</span>
-
-        <span style="color:#8be9fd">int</span> chars[NDIGITS <span style="color:#ff79c6">+</span> NCHARS];
-
-        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span> (NDIGITS<span style="color:#ff79c6">+</span>NCHARS); i<span style="color:#ff79c6">++</span>) 
-                chars[i] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-
-        <span style="color:#8be9fd">char</span> c;
-
-        <span style="color:#ff79c6">while</span> ((c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF){
-                <span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">&gt;=</span> <span style="color:#f1fa8c">&#39;a&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">&lt;=</span><span style="color:#f1fa8c">&#39;z&#39;</span>)
-                        chars[c <span style="color:#ff79c6">-</span> <span style="color:#f1fa8c">&#39;a&#39;</span>]<span style="color:#ff79c6">++</span>;
-                <span style="color:#ff79c6">if</span>(c<span style="color:#ff79c6">&gt;=</span><span style="color:#f1fa8c">&#39;0&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> c<span style="color:#ff79c6">&lt;=</span><span style="color:#f1fa8c">&#39;9&#39;</span>)
-                        chars[c<span style="color:#ff79c6">-</span><span style="color:#f1fa8c">&#39;0&#39;</span><span style="color:#ff79c6">+</span> NCHARS]<span style="color:#ff79c6">++</span>;
-        };
-
-        printf(<span style="color:#f1fa8c">&#34;HISTOGRAM================</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> (NDIGITS <span style="color:#ff79c6">+</span> NCHARS); i<span style="color:#ff79c6">++</span>){
-                <span style="color:#ff79c6">if</span>( i <span style="color:#ff79c6">&lt;</span> NCHARS)
-                        printf(<span style="color:#f1fa8c">&#34;char : %2d | &#34;</span>, i);
-                <span style="color:#ff79c6">else</span>
-                        printf(<span style="color:#f1fa8c">&#34;numb : %2d | &#34;</span>, i <span style="color:#ff79c6">-</span> NCHARS);
-                <span style="color:#ff79c6">for</span>( <span style="color:#8be9fd">int</span> k <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; k <span style="color:#ff79c6">&lt;</span> chars[i]; k<span style="color:#ff79c6">++</span>)
-                        printf(<span style="color:#f1fa8c">&#34;#&#34;</span>);
-
-                printf(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-        };
-
-        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div><p>This was the most confusing exercise for me and it took a while to make the connection to <code>c - 'a'</code>. The statement of in the book is key :</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define NDIGITS 10
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#define NCHARS 26
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic">/* write a program to print a histogram of the frequencies of different characters in its input */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#078;font-weight:bold">int</span> chars[NDIGITS <span style="color:#555">+</span> NCHARS];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i<span style="color:#555">&lt;</span> (NDIGITS<span style="color:#555">+</span>NCHARS); i<span style="color:#555">++</span>) 
+</span></span><span style="display:flex;"><span>                chars[i] <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#078;font-weight:bold">char</span> c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">while</span> ((c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF){
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">&gt;=</span> <span style="color:#c30">&#39;a&#39;</span> <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">&lt;=</span><span style="color:#c30">&#39;z&#39;</span>)
+</span></span><span style="display:flex;"><span>                        chars[c <span style="color:#555">-</span> <span style="color:#c30">&#39;a&#39;</span>]<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>(c<span style="color:#555">&gt;=</span><span style="color:#c30">&#39;0&#39;</span> <span style="color:#555">&amp;&amp;</span> c<span style="color:#555">&lt;=</span><span style="color:#c30">&#39;9&#39;</span>)
+</span></span><span style="display:flex;"><span>                        chars[c<span style="color:#555">-</span><span style="color:#c30">&#39;0&#39;</span><span style="color:#555">+</span> NCHARS]<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;HISTOGRAM================</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> (NDIGITS <span style="color:#555">+</span> NCHARS); i<span style="color:#555">++</span>){
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>( i <span style="color:#555">&lt;</span> NCHARS)
+</span></span><span style="display:flex;"><span>                        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;char : %2d | &#34;</span>, i);
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;numb : %2d | &#34;</span>, i <span style="color:#555">-</span> NCHARS);
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">for</span>( <span style="color:#078;font-weight:bold">int</span> k <span style="color:#555">=</span> <span style="color:#f60">0</span>; k <span style="color:#555">&lt;</span> chars[i]; k<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>                        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;#&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>This was the most confusing exercise for me and it took a while to make the connection to <code>c - 'a'</code>. The statement of in the book is key :</p>
 <p><strong>By definition, chars are just small integers, so char variables and constants are identical to
 ints in arithmetic expressions. This is natural and convenient; for example c-&lsquo;0&rsquo; is an
 integer expression with a value between 0 and 9 corresponding to the character &lsquo;0&rsquo; to &lsquo;9&rsquo;
@@ -577,31 +572,31 @@ stored in c</strong>.</p>
 <hr>
 <p><em>Rewrite the temperature conversion program to use a function for conversion</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define LOWER 0
-</span><span style="color:#ff79c6">#define UPPER 300
-</span><span style="color:#ff79c6">#define STEP 20
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">convert</span>()
-{
-        <span style="color:#8be9fd">float</span> fahr, celcius;
-        <span style="color:#ff79c6">while</span>(fahr <span style="color:#ff79c6">&lt;=</span> UPPER){
-                celcius <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">5.0</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">9.0</span>) <span style="color:#ff79c6">*</span> (fahr<span style="color:#ff79c6">-</span><span style="color:#bd93f9">32</span>);
-                printf(<span style="color:#f1fa8c">&#34;%3.0f %6.1f</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, fahr, celcius);
-                fahr <span style="color:#ff79c6">+=</span> STEP;
-        };
-};
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(){
-        printf(<span style="color:#f1fa8c">&#34;Fahrenite to Celcius</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-        printf(<span style="color:#f1fa8c">&#34;====================</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>);
-
-        convert();
-
-        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define LOWER 0
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#define UPPER 300
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#define STEP 20
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">convert</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#078;font-weight:bold">float</span> fahr, celcius;
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">while</span>(fahr <span style="color:#555">&lt;=</span> UPPER){
+</span></span><span style="display:flex;"><span>                celcius <span style="color:#555">=</span> (<span style="color:#f60">5.0</span><span style="color:#555">/</span><span style="color:#f60">9.0</span>) <span style="color:#555">*</span> (fahr<span style="color:#555">-</span><span style="color:#f60">32</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%3.0f %6.1f</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, fahr, celcius);
+</span></span><span style="display:flex;"><span>                fahr <span style="color:#555">+=</span> STEP;
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;Fahrenite to Celcius</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;====================</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">convert</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-16" class="hoverMe">
     Exercise 1-16 
@@ -610,53 +605,53 @@ stored in c</strong>.</p>
 <hr>
 <p><em>Revise the main routine of the longest-line program so it will correctly print the length of arbitrary long input lines, and as much as possible of the text.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define MAXLINE 1000
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">get_line</span>(<span style="color:#8be9fd">char</span> s[], <span style="color:#8be9fd">int</span> lim);
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">copy</span> (<span style="color:#8be9fd">char</span> to[], <span style="color:#8be9fd">char</span> from[]);
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-	<span style="color:#8be9fd">int</span> len;
-	<span style="color:#8be9fd">int</span> max;
-
-	<span style="color:#8be9fd">char</span> line[MAXLINE];
-	<span style="color:#8be9fd">char</span> longest[MAXLINE];
-
-	max <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-	<span style="color:#ff79c6">while</span>((len <span style="color:#ff79c6">=</span> get_line(line,MAXLINE))<span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>)
-		<span style="color:#ff79c6">if</span>(len <span style="color:#ff79c6">&gt;</span> max){
-			max <span style="color:#ff79c6">=</span> len;
-			copy(longest,line);
-		};
-	<span style="color:#ff79c6">if</span> (max <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>)
-		printf(<span style="color:#f1fa8c">&#34;max is : %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, max); <span style="color:#6272a4">/* solution */</span>
-		printf(<span style="color:#f1fa8c">&#34;%s&#34;</span>,longest);
-	<span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-};
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">get_line</span>(<span style="color:#8be9fd">char</span> s[], <span style="color:#8be9fd">int</span> lim)
-{
-	<span style="color:#8be9fd">int</span> c, i;
-	<span style="color:#ff79c6">for</span>(i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> lim<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> (c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF <span style="color:#ff79c6">&amp;&amp;</span> c<span style="color:#ff79c6">!=</span><span style="color:#f1fa8c">&#39;\n&#39;</span>;i<span style="color:#ff79c6">++</span>)
-		s[i] <span style="color:#ff79c6">=</span> c;
-	<span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>){
-		s[i] <span style="color:#ff79c6">=</span> c;
-		<span style="color:#ff79c6">++</span>i;
-	}
-	s[i] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-	<span style="color:#ff79c6">return</span> i;
-};
-
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">copy</span> (<span style="color:#8be9fd">char</span> to[], <span style="color:#8be9fd">char</span> from[])
-{
-	<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-	<span style="color:#ff79c6">while</span>((to[i] <span style="color:#ff79c6">=</span> from[i]) <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>)
-		<span style="color:#ff79c6">++</span>i;
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define MAXLINE 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">get_line</span>(<span style="color:#078;font-weight:bold">char</span> s[], <span style="color:#078;font-weight:bold">int</span> lim);
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">copy</span> (<span style="color:#078;font-weight:bold">char</span> to[], <span style="color:#078;font-weight:bold">char</span> from[]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">int</span> len;
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">int</span> max;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">char</span> line[MAXLINE];
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">char</span> longest[MAXLINE];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	max <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">while</span>((len <span style="color:#555">=</span> <span style="color:#c0f">get_line</span>(line,MAXLINE))<span style="color:#555">&gt;</span> <span style="color:#f60">0</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#069;font-weight:bold">if</span>(len <span style="color:#555">&gt;</span> max){
+</span></span><span style="display:flex;"><span>			max <span style="color:#555">=</span> len;
+</span></span><span style="display:flex;"><span>			<span style="color:#c0f">copy</span>(longest,line);
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">if</span> (max <span style="color:#555">&gt;</span> <span style="color:#f60">0</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;max is : %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, max); <span style="color:#09f;font-style:italic">/* solution */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%s&#34;</span>,longest);
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">get_line</span>(<span style="color:#078;font-weight:bold">char</span> s[], <span style="color:#078;font-weight:bold">int</span> lim)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">int</span> c, i;
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">for</span>(i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> lim<span style="color:#555">-</span><span style="color:#f60">1</span> <span style="color:#555">&amp;&amp;</span> (c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF <span style="color:#555">&amp;&amp;</span> c<span style="color:#555">!=</span><span style="color:#c30">&#39;\n&#39;</span>;i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>		s[i] <span style="color:#555">=</span> c;
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span>){
+</span></span><span style="display:flex;"><span>		s[i] <span style="color:#555">=</span> c;
+</span></span><span style="display:flex;"><span>		<span style="color:#555">++</span>i;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	s[i] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">return</span> i;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">copy</span> (<span style="color:#078;font-weight:bold">char</span> to[], <span style="color:#078;font-weight:bold">char</span> from[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">while</span>((to[i] <span style="color:#555">=</span> from[i]) <span style="color:#555">!=</span> <span style="color:#c30">&#39;\0&#39;</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#555">++</span>i;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-17" class="hoverMe">
     Exercise 1-17 
@@ -665,38 +660,38 @@ stored in c</strong>.</p>
 <hr>
 <p><em>Write a program to print all input lines that are longer than 80 characters.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define MAXLINE 1000
-</span><span style="color:#ff79c6">#define LIMIT 80
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">lineLength</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit);
-main()
-{
-    <span style="color:#6272a4">/* write a program to print all input lines that are longer than 80 */</span>
-
-    <span style="color:#8be9fd">int</span> c,len;
-    <span style="color:#8be9fd">char</span> line[MAXLINE];
-    
-    <span style="color:#ff79c6">while</span>((len <span style="color:#ff79c6">=</span> lineLength(line, MAXLINE)) <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>){
-        <span style="color:#ff79c6">if</span>(len <span style="color:#ff79c6">&gt;</span> LIMIT){
-            printf(<span style="color:#f1fa8c">&#34;%s</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,line);
-        }
-    }
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-}
-
-<span style="color:#8be9fd">int</span> lineLength(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit)
-{
-    <span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    <span style="color:#8be9fd">int</span> c;
-    <span style="color:#ff79c6">for</span>( i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> limit <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> (c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>; i<span style="color:#ff79c6">++</span>)
-    {
-        arr[i] <span style="color:#ff79c6">=</span> c;
-    }
-    <span style="color:#ff79c6">return</span> i;
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define MAXLINE 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#define LIMIT 80
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">lineLength</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit);
+</span></span><span style="display:flex;"><span><span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic">/* write a program to print all input lines that are longer than 80 */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c,len;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">char</span> line[MAXLINE];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span>((len <span style="color:#555">=</span> <span style="color:#c0f">lineLength</span>(line, MAXLINE)) <span style="color:#555">&gt;</span> <span style="color:#f60">0</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span>(len <span style="color:#555">&gt;</span> LIMIT){
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%s</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,line);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">lineLength</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>( i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> limit <span style="color:#555">-</span><span style="color:#f60">1</span> <span style="color:#555">&amp;&amp;</span> (c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39;\n&#39;</span>; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#555">=</span> c;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-18" class="hoverMe">
     Exercise 1-18 
@@ -705,47 +700,47 @@ main()
 <hr>
 <p><em>Write a program to remove trailing blanks and tabs from each line of input, and to delete entirely blank lines.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define MAXLINE 1000
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">readLine</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit);
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">remove_blanks</span>(<span style="color:#8be9fd">char</span> cArr[], <span style="color:#8be9fd">int</span> limit);
-
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-
-    <span style="color:#8be9fd">char</span> cArr[MAXLINE];
-    <span style="color:#8be9fd">int</span> len <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-
-    <span style="color:#ff79c6">while</span>((len <span style="color:#ff79c6">=</span> readLine(cArr, MAXLINE))<span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>)
-    {
-        printf(<span style="color:#f1fa8c">&#34;%s&#34;</span>,cArr);
-    }
-
-}
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">readLine</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit)
-{
-    <span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    <span style="color:#8be9fd">int</span> c;
-    <span style="color:#ff79c6">for</span>( i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> limit <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> (c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>; i<span style="color:#ff79c6">++</span>)
-    {
-        arr[i] <span style="color:#ff79c6">=</span> c;
-    }
-    printf(<span style="color:#f1fa8c">&#34;length of line = %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, i);
-    <span style="color:#ff79c6">if</span>(c<span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;\n&#39;</span>){
-        <span style="color:#ff79c6">while</span>(i <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span>(arr[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">||</span> arr[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>))
-            i<span style="color:#ff79c6">--</span>;
-        arr[i]<span style="color:#ff79c6">=</span>c;
-        i<span style="color:#ff79c6">++</span>;
-    };
-    printf(<span style="color:#f1fa8c">&#34;lengh of new line = %d</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>,i);
-    arr[i] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-    <span style="color:#ff79c6">return</span> i;
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define MAXLINE 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">readLine</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit);
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">remove_blanks</span>(<span style="color:#078;font-weight:bold">char</span> cArr[], <span style="color:#078;font-weight:bold">int</span> limit);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">char</span> cArr[MAXLINE];
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> len <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span>((len <span style="color:#555">=</span> <span style="color:#c0f">readLine</span>(cArr, MAXLINE))<span style="color:#555">&gt;</span> <span style="color:#f60">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%s&#34;</span>,cArr);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">readLine</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>( i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> limit <span style="color:#555">-</span><span style="color:#f60">1</span> <span style="color:#555">&amp;&amp;</span> (c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39;\n&#39;</span>; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#555">=</span> c;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;length of line = %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>, i);
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span>(c<span style="color:#555">==</span><span style="color:#c30">&#39;\n&#39;</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">while</span>(i <span style="color:#555">&gt;</span> <span style="color:#f60">0</span> <span style="color:#555">&amp;&amp;</span>(arr[i<span style="color:#555">-</span><span style="color:#f60">1</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">||</span> arr[i<span style="color:#555">-</span><span style="color:#f60">1</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span>))
+</span></span><span style="display:flex;"><span>            i<span style="color:#555">--</span>;
+</span></span><span style="display:flex;"><span>        arr[i]<span style="color:#555">=</span>c;
+</span></span><span style="display:flex;"><span>        i<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;lengh of new line = %d</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>,i);
+</span></span><span style="display:flex;"><span>    arr[i] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-19" class="hoverMe">
     Exercise 1-19 
@@ -754,67 +749,67 @@ main()
 <hr>
 <p><em>Write a function reverse(s) that reverses the character string s. Use it to write a program that reverses its input a line at a time.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6">#define MAX 1000
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">reverse</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit);
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">readLine</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit);
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(<span style="color:#8be9fd">void</span>)
-{
-    <span style="color:#8be9fd">char</span> arr[MAX];
-    <span style="color:#8be9fd">int</span> len;
-
-    <span style="color:#ff79c6">while</span>((len <span style="color:#ff79c6">=</span> readLine(arr,MAX))<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">0</span>)
-    {
-        reverse(arr, len);
-        printf(<span style="color:#f1fa8c">&#34;%s&#34;</span>,arr);
-    }
-
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-    
-}
-
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">reverse</span>(<span style="color:#8be9fd">char</span> line[], <span style="color:#8be9fd">int</span> length)
-{
-    <span style="color:#8be9fd">int</span> start <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    <span style="color:#8be9fd">int</span> end <span style="color:#ff79c6">=</span> length<span style="color:#ff79c6">-</span><span style="color:#bd93f9">2</span>;
-    <span style="color:#8be9fd">char</span> lineReverse[length];
-
-    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> end; i<span style="color:#ff79c6">&gt;=</span><span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span>)
-    {
-        lineReverse[start] <span style="color:#ff79c6">=</span> line[i];
-        start<span style="color:#ff79c6">++</span>;
-    }
-    
-    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> length; i<span style="color:#ff79c6">++</span>)
-        line[i] <span style="color:#ff79c6">=</span> lineReverse[i];
-    
-    
-    line[end<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>;
-    
-}
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">readLine</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit)
-{
-    <span style="color:#8be9fd">int</span> c, i;
-
-    <span style="color:#ff79c6">for</span>(i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> limit <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> ((c<span style="color:#ff79c6">=</span>getchar())<span style="color:#ff79c6">!=</span> EOF <span style="color:#ff79c6">&amp;&amp;</span> c<span style="color:#ff79c6">!=</span><span style="color:#f1fa8c">&#39;\n&#39;</span>); i<span style="color:#ff79c6">++</span>)
-        arr[i] <span style="color:#ff79c6">=</span> c;
-
-    <span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>){
-        arr[i]<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;\n&#39;</span>;
-        i<span style="color:#ff79c6">++</span>;
-    }
-
-    arr[i] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-
-    <span style="color:#ff79c6">return</span> i;
-}
-    
-</code></pre></div><p>To check that this program works not just with terminal input but with any file, try piping into it the source code of this file and see the result.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cat reverse.c | ./a.out &gt; result.txt
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#define MAX 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">reverse</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit);
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">readLine</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(<span style="color:#078;font-weight:bold">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">char</span> arr[MAX];
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> len;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span>((len <span style="color:#555">=</span> <span style="color:#c0f">readLine</span>(arr,MAX))<span style="color:#555">&gt;</span><span style="color:#f60">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">reverse</span>(arr, len);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%s&#34;</span>,arr);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">reverse</span>(<span style="color:#078;font-weight:bold">char</span> line[], <span style="color:#078;font-weight:bold">int</span> length)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> start <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> end <span style="color:#555">=</span> length<span style="color:#555">-</span><span style="color:#f60">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">char</span> lineReverse[length];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> end; i<span style="color:#555">&gt;=</span><span style="color:#f60">0</span>; i<span style="color:#555">--</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        lineReverse[start] <span style="color:#555">=</span> line[i];
+</span></span><span style="display:flex;"><span>        start<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> length; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>        line[i] <span style="color:#555">=</span> lineReverse[i];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    line[end<span style="color:#555">+</span><span style="color:#f60">1</span>] <span style="color:#555">=</span> <span style="color:#c30">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">readLine</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c, i;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>(i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> limit <span style="color:#555">-</span> <span style="color:#f60">1</span> <span style="color:#555">&amp;&amp;</span> ((c<span style="color:#555">=</span><span style="color:#c0f">getchar</span>())<span style="color:#555">!=</span> EOF <span style="color:#555">&amp;&amp;</span> c<span style="color:#555">!=</span><span style="color:#c30">&#39;\n&#39;</span>); i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#555">=</span> c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span>){
+</span></span><span style="display:flex;"><span>        arr[i]<span style="color:#555">=</span><span style="color:#c30">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>        i<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    arr[i] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>    
+</span></span></code></pre></div><p>To check that this program works not just with terminal input but with any file, try piping into it the source code of this file and see the result.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cat reverse.c | ./a.out &gt; result.txt
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-20" class="hoverMe">
     Exercise 1-20 
@@ -823,22 +818,22 @@ main()
 <hr>
 <p><em>Write a program detab that replaces tabs in the input with the proper number of blanks to space to the next tab stop. Assume a fixed set of tab stops, say every n columns. Should n be a variable or a symbolic parameter?</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define TAB 4
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-        <span style="color:#8be9fd">int</span> c;
-        <span style="color:#ff79c6">while</span>((c<span style="color:#ff79c6">=</span>getchar())<span style="color:#ff79c6">!=</span> EOF){
-                <span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>){
-                        <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> TAB; i<span style="color:#ff79c6">++</span>)
-                                putchar(<span style="color:#f1fa8c">&#39; &#39;</span>);
-                }<span style="color:#ff79c6">else</span>
-                        putchar(c);
-        };
-};
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define TAB 4
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#078;font-weight:bold">int</span> c;
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">while</span>((c<span style="color:#555">=</span><span style="color:#c0f">getchar</span>())<span style="color:#555">!=</span> EOF){
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span>){
+</span></span><span style="display:flex;"><span>                        <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> TAB; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>                                <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>                }<span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#c0f">putchar</span>(c);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-21" class="hoverMe">
     Exercise 1-21 
@@ -847,108 +842,108 @@ main()
 <hr>
 <p><em>Write a program entab that replaces strings of blanks by the minimum number of tabs and blanks to achieve the same spacing. Use the same tab stops as for detab. When either a tab or a single blank would suffice to reach a tab stop, which should be given preference?</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-    <span style="color:#8be9fd">int</span> c;
-    <span style="color:#8be9fd">int</span> spaces <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-
-    <span style="color:#ff79c6">while</span> ((c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF)
-    {
-
-        <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">||</span> c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>)
-        {
-            <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>)
-                putchar(c);
-
-            <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span>)
-                spaces <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>;
-
-            <span style="color:#ff79c6">if</span> (spaces <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> (c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39; &#39;</span> <span style="color:#ff79c6">||</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\t&#39;</span>))
-            {
-                <span style="color:#ff79c6">while</span> (spaces)
-                {
-                    putchar(<span style="color:#f1fa8c">&#39; &#39;</span>);
-                    spaces<span style="color:#ff79c6">--</span>;
-                }
-            }
-        }
-        <span style="color:#ff79c6">else</span>
-        {
-            putchar(c);
-        }
-    }
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> spaces <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span> ((c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">||</span> c <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39;\t&#39;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#c0f">putchar</span>(c);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span>)
+</span></span><span style="display:flex;"><span>                spaces <span style="color:#555">+=</span> <span style="color:#f60">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">if</span> (spaces <span style="color:#555">&gt;</span> <span style="color:#f60">0</span> <span style="color:#555">&amp;&amp;</span> (c <span style="color:#555">!=</span> <span style="color:#c30">&#39; &#39;</span> <span style="color:#555">||</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39;\t&#39;</span>))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">while</span> (spaces)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#c0f">putchar</span>(<span style="color:#c30">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>                    spaces<span style="color:#555">--</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">putchar</span>(c);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-22" class="hoverMe">
     Exercise 1-22 
     <a href="#exercise-1-22" class="text-decoration-none"> # </a>
 </h2>
 <hr>
-<p><em>Write a program to ``fold'' long input lines into two or more shorter lines after the last non-blank character that occurs before the n-th column of input. Make sure your program does something intelligent with very long lines, and if there are no blanks or tabs before the specified column.</em></p>
+<p><em>Write a program to ``fold&rsquo;&rsquo; long input lines into two or more shorter lines after the last non-blank character that occurs before the n-th column of input. Make sure your program does something intelligent with very long lines, and if there are no blanks or tabs before the specified column.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define MAXLINE 1000
-</span><span style="color:#ff79c6">#define MAXCHARS 50
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">readLine</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit);
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">breakup</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> lim);
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-    <span style="color:#8be9fd">int</span> len;
-    <span style="color:#8be9fd">char</span> arr[MAXLINE];
-    
-    len <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    <span style="color:#ff79c6">while</span>((len <span style="color:#ff79c6">=</span> readLine(arr,MAXLINE)) <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>)
-    {
-        <span style="color:#ff79c6">if</span>(len <span style="color:#ff79c6">&gt;</span> MAXCHARS)
-        {
-            breakup(arr,len);
-            printf(<span style="color:#f1fa8c">&#34;%s&#34;</span>,arr);
-        }<span style="color:#ff79c6">else</span>{
-            printf(<span style="color:#f1fa8c">&#34;%s&#34;</span>,arr);
-        }
-    }
-    
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-}
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">readLine</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> limit)
-{
-    <span style="color:#8be9fd">int</span> c,i;
-    <span style="color:#ff79c6">for</span>(i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>limit<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> (c<span style="color:#ff79c6">=</span>getchar())<span style="color:#ff79c6">!=</span> EOF <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>; i<span style="color:#ff79c6">++</span>)
-        arr[i] <span style="color:#ff79c6">=</span> c;
-    
-    <span style="color:#ff79c6">if</span>(c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>){
-        arr[i] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>;
-        i<span style="color:#ff79c6">++</span>;
-    }
-    arr[i] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-    <span style="color:#ff79c6">return</span> i;
-}
-
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">breakup</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> lim)
-{
-    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">&lt;</span>lim; i<span style="color:#ff79c6">++</span>)
-    {
-        <span style="color:#ff79c6">if</span>(i<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> i<span style="color:#ff79c6">%</span>MAXCHARS<span style="color:#ff79c6">==</span><span style="color:#bd93f9">0</span>)
-        {
-            <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd">int</span> k <span style="color:#ff79c6">=</span> i; k<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">0</span>; k<span style="color:#ff79c6">--</span>)
-            {
-                <span style="color:#ff79c6">if</span> (arr[k] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39; &#39;</span>){
-                    arr[k] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>;
-                    <span style="color:#ff79c6">break</span>;
-                }
-            }
-        }
-    }
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define MAXLINE 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#099">#define MAXCHARS 50
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">readLine</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit);
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">breakup</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> lim);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> len;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">char</span> arr[MAXLINE];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    len <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span>((len <span style="color:#555">=</span> <span style="color:#c0f">readLine</span>(arr,MAXLINE)) <span style="color:#555">&gt;</span> <span style="color:#f60">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span>(len <span style="color:#555">&gt;</span> MAXCHARS)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">breakup</span>(arr,len);
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%s&#34;</span>,arr);
+</span></span><span style="display:flex;"><span>        }<span style="color:#069;font-weight:bold">else</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%s&#34;</span>,arr);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">readLine</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> limit)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> c,i;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>(i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i<span style="color:#555">&lt;</span>limit<span style="color:#555">-</span><span style="color:#f60">1</span> <span style="color:#555">&amp;&amp;</span> (c<span style="color:#555">=</span><span style="color:#c0f">getchar</span>())<span style="color:#555">!=</span> EOF <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39;\n&#39;</span>; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#555">=</span> c;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span>(c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span>){
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#555">=</span> <span style="color:#c30">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>        i<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    arr[i] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">breakup</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> lim)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i<span style="color:#555">&lt;</span>lim; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span>(i<span style="color:#555">&gt;</span><span style="color:#f60">0</span> <span style="color:#555">&amp;&amp;</span> i<span style="color:#555">%</span>MAXCHARS<span style="color:#555">==</span><span style="color:#f60">0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">for</span>(<span style="color:#078;font-weight:bold">int</span> k <span style="color:#555">=</span> i; k<span style="color:#555">&gt;</span><span style="color:#f60">0</span>; k<span style="color:#555">--</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span> (arr[k] <span style="color:#555">==</span> <span style="color:#c30">&#39; &#39;</span>){
+</span></span><span style="display:flex;"><span>                    arr[k] <span style="color:#555">=</span> <span style="color:#c30">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#069;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
 <h2 id="exercise-1-23" class="hoverMe">
     Exercise 1-23 
@@ -957,114 +952,114 @@ main()
 <hr>
 <p><em>Write a program to remove all comments from a C program. Don&rsquo;t forget to handle quoted strings and character constants properly. C comments don&rsquo;t nest.</em></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6">#define MAXLINE 1000
-</span><span style="color:#ff79c6"></span>
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">removeComments</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> lim);
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">readLine</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> lim);
-
-<span style="color:#6272a4">/* Write a program to remove all comments from a c program */</span>
-<span style="color:#6272a4">/*
-</span><span style="color:#6272a4">*   multi line
-</span><span style="color:#6272a4">*   comment that will be
-</span><span style="color:#6272a4">*   removed
-</span><span style="color:#6272a4">*/</span>
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>()
-{
-    <span style="color:#8be9fd">int</span> len; <span style="color:#6272a4">// this needs to be removed as well
-</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">/* this needs to be removed as well */</span> <span style="color:#8be9fd">char</span> arr[MAXLINE];
-
-    <span style="color:#6272a4">// these comments will all be removed when the program is executed with this file as input
-</span><span style="color:#6272a4"></span>
-    <span style="color:#ff79c6">while</span> ((len <span style="color:#ff79c6">=</span> readLine(arr, MAXLINE)) <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>)
-    {
-        removeComments(arr, len);
-        printf(<span style="color:#f1fa8c">&#34;%s&#34;</span>, arr);
-    }
-
-    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>;
-}
-
-<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">removeComments</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> lim)
-{
-    <span style="color:#8be9fd">int</span> i,k,count;
-    i <span style="color:#ff79c6">=</span> k <span style="color:#ff79c6">=</span> count <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-    <span style="color:#8be9fd">char</span> narr[lim];
-    <span style="color:#8be9fd">int</span> narrCounter <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
-
-    <span style="color:#ff79c6">if</span> (arr[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;/&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> arr[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;/&#39;</span>)
-    {
-        arr[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-    }
-
-    <span style="color:#ff79c6">if</span> (arr[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;/&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> arr[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;*&#39;</span>)
-    {
-        <span style="color:#ff79c6">while</span> (i <span style="color:#ff79c6">&lt;</span> lim)
-        {
-            <span style="color:#ff79c6">if</span> (arr[i] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;*&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> arr[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;/&#39;</span>)
-            {
-                arr[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-            }
-            <span style="color:#ff79c6">++</span>i;
-        }
-    }
-
-    <span style="color:#ff79c6">for</span> (i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> lim; i<span style="color:#ff79c6">++</span>)
-    {
-        <span style="color:#ff79c6">if</span> (arr[i] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;/&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> arr[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;/&#39;</span>)
-        {
-            arr[i] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>;
-            arr[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-        }
-    };
-
-    <span style="color:#ff79c6">for</span>(k <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; k <span style="color:#ff79c6">&lt;</span> lim; k<span style="color:#ff79c6">++</span>)
-    {
-        <span style="color:#ff79c6">if</span>(arr[k] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;/&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> arr[k<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;*&#39;</span>)
-        {
-            <span style="color:#ff79c6">while</span>(arr[k]<span style="color:#ff79c6">!=</span><span style="color:#f1fa8c">&#39;\n&#39;</span>){
-                k<span style="color:#ff79c6">++</span>;
-                <span style="color:#ff79c6">if</span>(arr[k]<span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;*&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> arr[k<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;/&#39;</span>){
-                    count <span style="color:#ff79c6">=</span> k<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>;
-                    <span style="color:#ff79c6">while</span>(count<span style="color:#ff79c6">&lt;=</span>lim)
-                    {
-                        narr[narrCounter]<span style="color:#ff79c6">=</span>arr[count<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>];
-                        narrCounter<span style="color:#ff79c6">++</span>;
-                        count<span style="color:#ff79c6">++</span>;
-                    }
-                    arr[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-                    printf(<span style="color:#f1fa8c">&#34;%s&#34;</span>,narr);
-                }
-            }
-        }
-    }
-
-    <span style="color:#ff79c6">if</span>((arr[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;/&#39;</span> <span style="color:#ff79c6">&amp;&amp;</span> arr[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;*&#39;</span>) <span style="color:#ff79c6">||</span> (arr[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;*&#39;</span>))
-    {
-        arr[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;\0&#39;</span>;
-    }   
-}
-
-<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">readLine</span>(<span style="color:#8be9fd">char</span> arr[], <span style="color:#8be9fd">int</span> lim)
-{
-    <span style="color:#8be9fd">int</span> i, c;
-
-    <span style="color:#ff79c6">for</span> (i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> lim <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&amp;&amp;</span> (c <span style="color:#ff79c6">=</span> getchar()) <span style="color:#ff79c6">!=</span> EOF <span style="color:#ff79c6">&amp;&amp;</span> c <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>; i<span style="color:#ff79c6">++</span>)
-        arr[i] <span style="color:#ff79c6">=</span> c;
-
-    <span style="color:#ff79c6">if</span> (c <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>)
-    {
-        arr[i] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\n&#39;</span>;
-        i<span style="color:#ff79c6">++</span>;
-    }
-
-    arr[i] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;\0&#39;</span>;
-    <span style="color:#ff79c6">return</span> i;
-}
-</code></pre></div><p><strong>Note: Don&rsquo;t forget to run the program&rsquo;s source through its executable to make sure that all comments have been removed and that the program works as intented.</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cat removeComments.c | ./a.out &gt; results.txt
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#099">#include</span> <span style="color:#099">&lt;stdio.h&gt;</span><span style="color:#099">
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#099">#define MAXLINE 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">removeComments</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> lim);
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">readLine</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> lim);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">/* Write a program to remove all comments from a c program */</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">*   multi line
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">*   comment that will be
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">*   removed
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> len; <span style="color:#09f;font-style:italic">// this needs to be removed as well
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>    <span style="color:#09f;font-style:italic">/* this needs to be removed as well */</span> <span style="color:#078;font-weight:bold">char</span> arr[MAXLINE];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic">// these comments will all be removed when the program is executed with this file as input
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">while</span> ((len <span style="color:#555">=</span> <span style="color:#c0f">readLine</span>(arr, MAXLINE)) <span style="color:#555">&gt;</span> <span style="color:#f60">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">removeComments</span>(arr, len);
+</span></span><span style="display:flex;"><span>        <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%s&#34;</span>, arr);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">removeComments</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> lim)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> i,k,count;
+</span></span><span style="display:flex;"><span>    i <span style="color:#555">=</span> k <span style="color:#555">=</span> count <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">char</span> narr[lim];
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> narrCounter <span style="color:#555">=</span> <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> (arr[<span style="color:#f60">0</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;/&#39;</span> <span style="color:#555">&amp;&amp;</span> arr[<span style="color:#f60">1</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[<span style="color:#f60">0</span>] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> (arr[<span style="color:#f60">0</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;/&#39;</span> <span style="color:#555">&amp;&amp;</span> arr[<span style="color:#f60">1</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;*&#39;</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">while</span> (i <span style="color:#555">&lt;</span> lim)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">if</span> (arr[i] <span style="color:#555">==</span> <span style="color:#c30">&#39;*&#39;</span> <span style="color:#555">&amp;&amp;</span> arr[i <span style="color:#555">+</span> <span style="color:#f60">1</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                arr[<span style="color:#f60">0</span>] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#555">++</span>i;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> (i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> lim; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> (arr[i] <span style="color:#555">==</span> <span style="color:#c30">&#39;/&#39;</span> <span style="color:#555">&amp;&amp;</span> arr[i <span style="color:#555">+</span> <span style="color:#f60">1</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            arr[i] <span style="color:#555">=</span> <span style="color:#c30">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>            arr[i <span style="color:#555">+</span> <span style="color:#f60">1</span>] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>(k <span style="color:#555">=</span> <span style="color:#f60">0</span>; k <span style="color:#555">&lt;</span> lim; k<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span>(arr[k] <span style="color:#555">==</span> <span style="color:#c30">&#39;/&#39;</span> <span style="color:#555">&amp;&amp;</span> arr[k<span style="color:#555">+</span><span style="color:#f60">1</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;*&#39;</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">while</span>(arr[k]<span style="color:#555">!=</span><span style="color:#c30">&#39;\n&#39;</span>){
+</span></span><span style="display:flex;"><span>                k<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">if</span>(arr[k]<span style="color:#555">==</span><span style="color:#c30">&#39;*&#39;</span> <span style="color:#555">&amp;&amp;</span> arr[k<span style="color:#555">+</span><span style="color:#f60">1</span>]<span style="color:#555">==</span><span style="color:#c30">&#39;/&#39;</span>){
+</span></span><span style="display:flex;"><span>                    count <span style="color:#555">=</span> k<span style="color:#555">+</span><span style="color:#f60">1</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#069;font-weight:bold">while</span>(count<span style="color:#555">&lt;=</span>lim)
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        narr[narrCounter]<span style="color:#555">=</span>arr[count<span style="color:#555">+</span><span style="color:#f60">1</span>];
+</span></span><span style="display:flex;"><span>                        narrCounter<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>                        count<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                    arr[<span style="color:#f60">0</span>] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#c0f">printf</span>(<span style="color:#c30">&#34;%s&#34;</span>,narr);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span>((arr[<span style="color:#f60">0</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;/&#39;</span> <span style="color:#555">&amp;&amp;</span> arr[<span style="color:#f60">1</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;*&#39;</span>) <span style="color:#555">||</span> (arr[<span style="color:#f60">0</span>] <span style="color:#555">==</span> <span style="color:#c30">&#39;*&#39;</span>))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[<span style="color:#f60">0</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>    }   
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">readLine</span>(<span style="color:#078;font-weight:bold">char</span> arr[], <span style="color:#078;font-weight:bold">int</span> lim)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#078;font-weight:bold">int</span> i, c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> (i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> lim <span style="color:#555">-</span> <span style="color:#f60">1</span> <span style="color:#555">&amp;&amp;</span> (c <span style="color:#555">=</span> <span style="color:#c0f">getchar</span>()) <span style="color:#555">!=</span> EOF <span style="color:#555">&amp;&amp;</span> c <span style="color:#555">!=</span> <span style="color:#c30">&#39;\n&#39;</span>; i<span style="color:#555">++</span>)
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#555">=</span> c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> (c <span style="color:#555">==</span> <span style="color:#c30">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        arr[i] <span style="color:#555">=</span> <span style="color:#c30">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>        i<span style="color:#555">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    arr[i] <span style="color:#555">=</span> <span style="color:#c30">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Note: Don&rsquo;t forget to run the program&rsquo;s source through its executable to make sure that all comments have been removed and that the program works as intented.</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cat removeComments.c | ./a.out &gt; results.txt
+</span></span></code></pre></div>
     </div>
     <div class="">
         
@@ -1101,7 +1096,7 @@ main()
         <a href="https://t.me/+cH3f1gJUqCY2NTI0" title="Stay updated on Telegram" class="text-black" target="_blank"><i class="bi bi-telegram pe-4"></i></a>
         <a href="/index.xml" title="View the RSS sitemap" class="text-black" target="_blank"><i class="bi bi-rss-fill "></i></a>
     </div>
-    <p class="text-center pt-4"> &copy; 2023 Andrew V | All rights reserved</p>
+    <p class="text-center pt-4"> &copy; 2024 Andrew V | All rights reserved</p>
 </footer>
 
     

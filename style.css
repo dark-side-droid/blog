@@ -11,6 +11,8 @@
     src: url('Oswald-Medium.ttf');
 }
 
+
+
 * {
     font-family:'Montserrat', Helvetica, Arial, sans-serif !important;
 }
@@ -21,10 +23,10 @@ h1,h2,h3,h4{
 }
 
 
-
-
-code {
-    font-family: monospace !important;
+.highlight > *{
+    padding:15px;
+    border-radius: 5px;
+    font-size: 0.8em;
 }
 
 .brand {
@@ -105,13 +107,6 @@ img {
 
 ;
 
-code {
-    font-family: monospace !important;
-}
-
-.highlight>pre {
-    border-radius: 5px !important;
-}
 
 
 @media (min-width: 300px) {
